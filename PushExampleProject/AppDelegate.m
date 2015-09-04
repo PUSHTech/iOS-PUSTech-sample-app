@@ -4,9 +4,6 @@
 #import "AppDelegate.h"
 #import "NotificationDelegate.h"
 #import "EventBusDelegate.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-
 
 @interface AppDelegate () <PSHLandingPageDelegate>
 
@@ -22,7 +19,6 @@
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupPushTechSDK];
-    [self setupFabric];
     return YES;
 }
 
@@ -43,22 +39,17 @@
 
 - (void)willShowLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willshow LP");
+    NSLog(@"willshow landing page");
 }
 
 - (void)willDismissLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willdismiss LP");
+    NSLog(@"willdismiss landing page");
 }
 - (BOOL)shouldNavigateToPageWithURLRequest:(NSURLRequest *)request
 {
     NSLog(@"will navigate");
     return YES;
-}
-
-- (void)setupFabric
-{
-    [Fabric with:@[CrashlyticsKit]];
 }
 
 @end
