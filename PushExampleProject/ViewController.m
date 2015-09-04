@@ -142,8 +142,8 @@
 
 - (IBAction)sendTestPushButtonPressed:(id)sender {
     [[PSHEngine sharedInstance]
-        sendTestPushNotificationWithAccountID:@"53b6706985216d235100000f"
-                                 masterSecret:@"a8007387b8bfceb6b5629fc9467fc850"
+        sendTestPushNotificationWithAccountID:@""
+                                 masterSecret:@""
                                    completion:^(NSError *error, id obj)
      {
          if (!error) {
