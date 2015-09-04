@@ -2,8 +2,8 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  The kind of metric you want to send. 
- *  Each metric should be sent with the appropriate kind of data.
+ *  The type of metric you want to send.
+ *  Each metric should be sent with the appropriate type of data or method.
  */
 typedef NS_ENUM(NSUInteger, PSHMetricType){
     /**
@@ -23,21 +23,21 @@ typedef NS_ENUM(NSUInteger, PSHMetricType){
      */
     PSHMetricTypeGender,
     /**
-     *  Value has to be an NSNumber, the bool value will be used
+     *  Value has to be an NSString object
      */
-    PSHMetricTypeLinkedPhoneNumber,
+    PSHMetricTypePhoneNumber,
     /**
-     *  Value has to be an NSNumber, the bool value will be used
+     *  Value has to be an NSString object
      */
-    PSHMetricTypeLinkedEmail,
+    PSHMetricTypeEmail,
     /**
-     *  Value has to be an NSDate object
+     *  No value required, send using the method 'sendMetricOfType:'
      */
-    PSHMetricTypeLastFacebookLogin,
+    PSHMetricTypeFacebookLogin,
     /**
-     *  Value has to be an NSDate object
+     *  No value required, send using the method 'sendMetricOfType:'
      */
-    PSHMetricTypeLastTwitterLogin,
+    PSHMetricTypeTwitterLogin,
     /**
      *  Value has to be an NSNumber, the unsigned integer value will be used
      */
@@ -47,9 +47,9 @@ typedef NS_ENUM(NSUInteger, PSHMetricType){
      */
     PSHMetricTypeTwitterFollowers,
     /**
-     *  Value has to be an NSDate object
+     *  No value required, send using the method 'sendMetricOfType:'
      */
-    PSHMetricTypeLastGoogleLogin,
+    PSHMetricTypeGoogleLogin,
     /**
      *  Value has to be an NSDictionary with the following keys/values:
      *  <p>key:"name", value: An NSString with the product's name</p>
@@ -69,8 +69,16 @@ typedef NS_ENUM(NSUInteger, PSHMetricType){
     /**
      * Value has to be an NSString object with the campaignId
      */
-    PSHMetricTypeViewedCampaign
-};
+    PSHMetricTypeViewedCampaign,
+    /**
+     * Value has to be an NSString object
+     */
+    PSHMetricTypeFirstName,
+    /**
+     * Value has to be an NSString object
+     */
+    PSHMetricTypeLastName
+};      
 
 @interface PSHMetrics : NSObject
 
@@ -83,16 +91,32 @@ typedef NS_ENUM(NSUInteger, PSHMetricType){
 + (void)sendMetricOfType:(PSHMetricType)type value:(id)value;
 
 /**
+ *  This method should be used to send the metrics that do not require a value.
+ *
+ *  @param type  The type of metric.
+ */
++ (void)sendMetricOfType:(PSHMetricType)type;
+
+/**
  *  Use this method to send your custom metrics to the manager.
  *
  *  @param type    An NSString defining the type of your metric.
  *  @param subtype An NSString defining the subtype of your metric.
- *  @param value   An NSString with the value of your metric.
+ *  @param value   An NSString, NSNumber(double value will be sent) or NSDate.
  */
 + (void)sendCustomMetricWithType:(NSString *)type
                          subtype:(NSString *)subtype
-                           value:(NSString *)value;
+                           value:(id)value;
 
+/**
+ *  Use this method to send your custom metrics to the manager.
+ *
+ *  @param type    An NSString defining the type of your metric.
+ *  @param subtype An NSString defining the subtype of your metric.
+ */
++ (void)sendCustomMetricWithType:(NSString *)type
+                         subtype:(NSString *)subtype
+                       boolValue:(BOOL)value;
 /**
  *  Use this method to send the metrics immediately.
  */

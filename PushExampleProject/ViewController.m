@@ -107,20 +107,17 @@
     [PSHMetrics sendMetricOfType:PSHMetricTypeFacebookFriends
                            value:[NSNumber numberWithUnsignedInteger:10000]];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeLastFacebookLogin
-                           value:[NSDate date]];
+    [PSHMetrics sendMetricOfType:PSHMetricTypeFacebookLogin];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeLastGoogleLogin
-                           value:[NSDate date]];
+    [PSHMetrics sendMetricOfType:PSHMetricTypeGoogleLogin];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeLastTwitterLogin
-                           value:[NSDate date]];
+    [PSHMetrics sendMetricOfType:PSHMetricTypeTwitterLogin];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeLinkedEmail
-                           value:[NSNumber numberWithBool:YES]];
+    [PSHMetrics sendMetricOfType:PSHMetricTypeEmail
+                           value:@"an@email.com"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeLinkedPhoneNumber
-                           value:[NSNumber numberWithBool:NO]];
+    [PSHMetrics sendMetricOfType:PSHMetricTypePhoneNumber
+                           value:@"+34789675928"];
     
     NSDictionary *purchase = @{
                                @"name"      : @"iPhone 6",
@@ -134,7 +131,7 @@
                            value:@(5000)];
     
     [PSHMetrics sendMetricOfType:PSHMetricTypeViewedCampaign
-                           value:[NSNumber numberWithBool:YES]];
+                           value:@"campaignId9238oy933"];
     
     //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];
@@ -145,8 +142,8 @@
 
 - (IBAction)sendTestPushButtonPressed:(id)sender {
     [[PSHEngine sharedInstance]
-        sendTestPushNotificationWithAccountID:@""
-                                 masterSecret:@""
+        sendTestPushNotificationWithAccountID:@"53b6706985216d235100000f"
+                                 masterSecret:@"a8007387b8bfceb6b5629fc9467fc850"
                                    completion:^(NSError *error, id obj)
      {
          if (!error) {

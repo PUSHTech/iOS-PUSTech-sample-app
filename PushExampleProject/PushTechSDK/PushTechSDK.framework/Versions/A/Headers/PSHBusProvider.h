@@ -10,6 +10,8 @@
  
  Since we're using `NSNotificationCenter` the same rules are applied in order to avoid leaking objects around, so don't forget to remove event bus listeners (`removeListener:`) whenever they are no longer needed.
  */
+@protocol PSHEventBusDelegate;
+
 @interface PSHBusProvider : NSObject
 
 /**
@@ -24,14 +26,14 @@
  *
  *  @param target Listener object.
  */
--(void)addListener:(NSObject*)target;
+-(void)addListener:(NSObject <PSHEventBusDelegate>*)target;
 
 /**
  *  Removes an object as an event bus listener.
  *
  *  @param target Listener object.
  */
--(void)removeListener:(NSObject*)target;
+-(void)removeListener:(NSObject <PSHEventBusDelegate>*)target;
 
 /**
  *  Emits an event (aka `NSNotification`) with the specified object as its payload.

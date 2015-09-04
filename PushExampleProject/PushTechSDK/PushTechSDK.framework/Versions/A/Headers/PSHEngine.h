@@ -1,8 +1,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PSHCampaignDAO.h"
-#import "PSHCustomDAO.h"
+@protocol PSHNotificationDelegate, PSHEventBusDelegate;
+
+@class PSHConfiguration, PSHCampaignDAO, PSHCustomDAO;
 
 /**
  *  Asynchronously executed block triggered after an API call.
@@ -10,6 +11,58 @@
  *  @param `NSError` An error if the operation fails; otherwise (success), `nil`
  */
 typedef void(^PSHAsyncSimpleBlock)(NSError*);
+
+/**
+ *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completion:`.
+ *
+ *  @param BOOL            `YES` if the notification is a valid push; `NO` otherwise.
+ *  @param id               Push info object, or `nil` if any error happens or the notification didn't contain any push related info.
+ *  @param NSError        An error if the operation fails; otherwise (success), `nil`.
+ */
+typedef void(^PSHHandleRemotePushAsyncBlock)(BOOL, id, NSError*);
+
+/**
+ *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
+ *
+ *  @param BOOL            `YES` if the notification did contain any NEW campaign related info; `NO` otherwise.
+ *  @param PSHCampaignDAO Campaign info object, or `nil` if any error happens or the notification didn't contain any campaign related info.
+ *  @param NSError        An error if the operation fails; otherwise (success), `nil`.
+ */
+typedef void(^PSHHandleRemotePushCampaignAsyncBlock)(BOOL, PSHCampaignDAO*);
+
+/**
+ *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
+ *
+ *  @param BOOL            `YES` if the notification is a valid custom push; `NO` otherwise.
+ *  @param PSHCustomDAO    Custom info object, or `nil` if any error happens or the notification didn't contain any custom related info.
+ *  @param NSError         An error if the operation fails; otherwise (success), `nil`.
+ */
+typedef void(^PSHHandleRemotePushCustomAsyncBlock)(BOOL, PSHCustomDAO*);
+
+/**
+ *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
+ *
+ *  @param NSDictionary    Push dictionary (userInfo)
+ */
+typedef void(^PSHHandleRemotePushOtherAsyncBlock)(NSDictionary *);
+
+/**
+ *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
+ *
+ *  @param NSError         Error.
+ */
+typedef void(^PSHHandleRemotePushFailAsyncBlock)(NSError *);
+
+/**
+ *  TL;DR if the value of error is nil, you're good to go. Otherwise check the "localizedDescription" parameter.
+ *
+ *  Asynchronous callback to handle the completion of network request operations.
+ *
+ *  @param NSError  In an error happens this will contain a description of the error occured in the "localizedDescription", otherwise the value will be nil.
+ *  @param id       If there's an asociated object with the response, this property will contain the specific object, otherwise it will be nil.
+ */
+typedef void(^PSHCompletionBlock)(NSError *error, id obj);
+
 
 /**
  *  Defined type to configure the SDK logging level.
@@ -75,6 +128,17 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @name Initialization
 
++ (instancetype)startWithEventBusDelegate:(id<PSHEventBusDelegate>)eventBusDelegate
+                     notificationDelegate:(id<PSHNotificationDelegate>)notificationDelegate;
+
++ (instancetype)startWithConfiguration:(PSHConfiguration *)config
+                      eventBusDelegate:(id<PSHEventBusDelegate>)eventBusDelegate
+                  notificationDelegate:(id<PSHNotificationDelegate>)notificationDelegate;
+
+- (void)setEventBusDelegate:(id<PSHEventBusDelegate>)eventBusDelegate;
+
+- (void)setPushNotificationDelegate:(id<PSHNotificationDelegate>)notificationDelegate;
+
 /**
  *  Initializes the engine with Push Technologies app credentials and logging level. Should be called ideally inside `application:didFinishLaunchingWithOptions:`
  *  and before any other method or property of the SDK.<br/>
@@ -86,7 +150,8 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
  */
 + (void)initializeWithAppId:(NSString*)appId
                   appSecret:(NSString*)appSecret
-                   listener:(id)listener
+       notificationDelegate:(id<PSHNotificationDelegate>)notificationDelegate
+           eventBusDelegate:(id<PSHEventBusDelegate>)eventBusDelegate
                    logLevel:(PSHLogLevel)logLevel;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,56 +206,6 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
  *  Returns an array of `PSHCampaignDAO` instances.
  */
 @property (nonatomic, readonly) NSArray* campaignList;
-
-/**
- *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completion:`.
- *
- *  @param BOOL            `YES` if the notification is a valid push; `NO` otherwise.
- *  @param id               Push info object, or `nil` if any error happens or the notification didn't contain any push related info.
- *  @param NSError*        An error if the operation fails; otherwise (success), `nil`.
- */
-typedef void(^PSHHandleRemotePushAsyncBlock)(BOOL, id, NSError*);
-
-/**
- *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
- *
- *  @param BOOL            `YES` if the notification did contain any NEW campaign related info; `NO` otherwise.
- *  @param PSHCampaignDAO* Campaign info object, or `nil` if any error happens or the notification didn't contain any campaign related info.
- *  @param NSError*        An error if the operation fails; otherwise (success), `nil`.
- */
-typedef void(^PSHHandleRemotePushCampaignAsyncBlock)(BOOL, PSHCampaignDAO*);
-
-/**
- *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
- *
- *  @param BOOL            `YES` if the notification is a valid custom push; `NO` otherwise.
- *  @param PSHCustomDAO*    Custom info object, or `nil` if any error happens or the notification didn't contain any custom related info.
- *  @param NSError*         An error if the operation fails; otherwise (success), `nil`.
- */
-typedef void(^PSHHandleRemotePushCustomAsyncBlock)(BOOL, PSHCustomDAO*);
-
-/**
- *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
- *
- *  @param NSDictionary*    Push dictionary (userInfo)
- */
-typedef void(^PSHHandleRemotePushOtherAsyncBlock)(NSDictionary *);
-
-/**
- *  Asynchronous callback block to be used on `handleRemotePushWithUserInfo:completionCustom:completionCampaign:completionOther:`.
- *
- *  @param NSError*         Error.
- */
-typedef void(^PSHHandleRemotePushFailAsyncBlock)(NSError *);
-
-/**
- *  TL;DR if the value of error is nil, you're good to go. Otherwise check the "localizedDescription" parameter.
- *  Asynchronous callback to handle the completion of network operations.
- *
- *  @param error In an error happens this will contain a description of the error occured in the "localizedDescription", otherwise the value will be nil.
- *  @param obj   If there's an asociated object with the response, this property will contain the specific object, otherwise it will be nil.
- */
-typedef void(^PSHCompletionBlock)(NSError *error, id obj);
 
 /**
  
@@ -264,6 +279,7 @@ typedef void(^PSHCompletionBlock)(NSError *error, id obj);
  *                         (maximum length 11 characters). Restrictions may apply, depending on the destination.
  *  @param brandName       Brand or name of your app, service the verification is for. This alphanumeric (maximum length 18 characters)
  *                         will be used inside the body of all SMS and TTS messages sent (e.g. "Your PIN code is ..")
+ *  @param onCompletion    Asynchronously executed block, fired once the operation has finished.
  */
 - (void)sendAuthenticationSMSToPhoneNumber:(NSInteger)phoneNumber
                                countryCode:(NSInteger)countryCode
@@ -274,6 +290,7 @@ typedef void(^PSHCompletionBlock)(NSError *error, id obj);
 
 /**
  *  After receiving the authentication code, use this method to verify it.
+ *  @param onCompletion    Asynchronously executed block, fired once the operation has finished.
  */
 - (void)validateCode:(NSString *)code completion:(PSHCompletionBlock)onCompletion;
 
@@ -283,6 +300,7 @@ typedef void(^PSHCompletionBlock)(NSError *error, id obj);
  *
  *  @param accountID    The account ID you can find in the PushTech manager site under account settings
  *  @param masterSecret The master secret of your application(not the same as the application secret), you can find this in the PushTech manager site at the applications section.
+ *  @param onCompletion    Asynchronously executed block, fired once the operation has finished.
  */
 - (void)sendTestPushNotificationWithAccountID:(NSString *)accountID
                                  masterSecret:(NSString *)masterSecret

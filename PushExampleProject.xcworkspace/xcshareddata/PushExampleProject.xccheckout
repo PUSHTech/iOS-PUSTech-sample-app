@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>61A36EE3-FE33-4368-995B-66AA9660B47F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PushExampleProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D55F8F978B419F2F27F2F3D281D8F7D77CAAFEF2</key>
+		<string>https://github.com/PUSHTech/push-sdk-sample-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PushExampleProject.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D55F8F978B419F2F27F2F3D281D8F7D77CAAFEF2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/PUSHTech/push-sdk-sample-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D55F8F978B419F2F27F2F3D281D8F7D77CAAFEF2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D55F8F978B419F2F27F2F3D281D8F7D77CAAFEF2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PushExampleProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
