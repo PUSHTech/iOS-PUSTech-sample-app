@@ -63,8 +63,7 @@
              }
          }];
     } else {
-        NSInteger phoneNumber = self.textField.text.integerValue;
-        [[PSHEngine sharedInstance] sendAuthenticationSMSToPhoneNumber:phoneNumber
+        [[PSHEngine sharedInstance] sendAuthenticationSMSToPhoneNumber:self.textField.text
                                                            countryCode:34
                                                               senderId:nil
                                                              brandName:nil
@@ -89,49 +88,46 @@
     
     //Showcase of all the metrics avaliable.
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeGender
-                           value:@"MALE"];
+    // Custom metrics
+    [PSHMetrics sendCustomMetricBoolean:YES type:@"boolean_type" subtype:@"boolean_subtype"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeBirthday
-                           value:[NSDate date]];
+    [PSHMetrics sendCustomMetricDate:[NSDate date] type:@"date_type" subtype:@"date_subtype"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeCarrierName
-                           value:@"AT&T"];
+    [PSHMetrics sendCustomMetricString:@"This is a string" type:@"string_type" subtype:@"string_subtype"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeCity
-                           value:@"New York"];
+    [PSHMetrics sendCustomMetricNumber:@(123.456) type:@"number_type" subtype:@"number_subtype"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeCountry
-                           value:@"USA"];
+    // Model metrics
+    [PSHMetrics sendMetricGender:PSHGenderTypeMale];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeFacebookFriends
-                           value:[NSNumber numberWithUnsignedInteger:10000]];
+    [PSHMetrics sendMetricBirthday:[NSDate date]];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeFacebookLogin];
+    [PSHMetrics sendMetricCarrierName:@"AT&T"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeGoogleLogin];
+    [PSHMetrics sendMetricCity:@"New York"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeTwitterLogin];
+    [PSHMetrics sendMetricCountry:@"US"];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeEmail
-                           value:@"an@email.com"];
+    [PSHMetrics sendMetricFacebookFriends:1234];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypePhoneNumber
-                           value:@"+34789675928"];
+    [PSHMetrics sendMetricFacebookLogin];
     
-    NSDictionary *purchase = @{
-                               @"name"      : @"iPhone 6",
-                               @"price"     : [NSNumber numberWithDouble:1000.0],
-                               @"productId" : @"h92j38d7"
-                               };
-    [PSHMetrics sendMetricOfType:PSHMetricTypeProductPurchase
-                           value:purchase];
+    [PSHMetrics sendMetricTwitterFollowers:1234];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeTwitterFollowers
-                           value:@(5000)];
+    [PSHMetrics sendMetricTwitterLogin];
     
-    [PSHMetrics sendMetricOfType:PSHMetricTypeViewedCampaign
-                           value:@"campaignId9238oy933"];
+    [PSHMetrics sendMetricGoogleLogin];
+    
+    [PSHMetrics sendMetricFirstName:@"John"];
+    
+    [PSHMetrics sendMetricLastName:@"Doe"];
+    
+    [PSHMetrics sendMetricEmail:@"email@email.me"];
+    
+    [PSHMetrics sendMetricPhone:@"+15417543010"];
+    
+    [PSHMetrics sendMetricPurchaseProduct:@"iPhone 6" productId:@"h92j38d7" price:@(799.99) currency:@"USD"];
+
     
     //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];

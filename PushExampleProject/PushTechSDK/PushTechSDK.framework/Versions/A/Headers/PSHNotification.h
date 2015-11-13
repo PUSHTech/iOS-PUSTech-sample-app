@@ -15,6 +15,4 @@ typedef NS_ENUM(NSUInteger, PSHNotificationDefaultAction) {
 @property (nonatomic, strong) PSHCustomDAO *custom;
 @property (nonatomic, assign) PSHNotificationDefaultAction defaultAction;
 
-+ (instancetype)notificationWithObject:(id)obj userInfo:(NSDictionary *)userInfo;
-
 @end

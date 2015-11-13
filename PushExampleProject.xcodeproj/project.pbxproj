@@ -19,8 +19,8 @@
 		2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B7425421B145900002B58EE /* LaunchScreen.xib */; };
 		2B7425501B145900002B58EE /* PushExampleProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B74254F1B145900002B58EE /* PushExampleProjectTests.m */; };
 		2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9D32A51B945165006EEFE1 /* CoreLocation.framework */; };
-		2BECCACB1B145C1200AD2D28 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BECCAC91B145C1200AD2D28 /* PushTechSDK.framework */; };
-		2BECCACC1B145C1200AD2D28 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2BECCACA1B145C1200AD2D28 /* PushTechSDKResources.bundle */; };
+		4D82CF891BF62CC0009051F1 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */; };
+		4D82CF8A1BF62CC0009051F1 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		2B74254E1B145900002B58EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B74254F1B145900002B58EE /* PushExampleProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushExampleProjectTests.m; sourceTree = "<group>"; };
 		2B9D32A51B945165006EEFE1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2BECCAC91B145C1200AD2D28 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
-		2BECCACA1B145C1200AD2D28 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
+		4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
+		4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
 		9C696B5D9B74379565F152A0 /* libPods-PushExampleProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushExampleProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0E48EF015780EEE5051E5 /* Pods-PushExampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F71A30805A6C15D2AE244543 /* Pods-PushExampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,8 +66,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */,
+				4D82CF891BF62CC0009051F1 /* PushTechSDK.framework in Frameworks */,
 				1FAF20642668B0B6D9E55702 /* libPods-PushExampleProject.a in Frameworks */,
-				2BECCACB1B145C1200AD2D28 /* PushTechSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,9 +174,9 @@
 		2BECCAC81B145C1200AD2D28 /* PushTechSDK */ = {
 			isa = PBXGroup;
 			children = (
+				4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */,
+				4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */,
 				2B7142B91B7DF9B20049DB10 /* Configuration */,
-				2BECCAC91B145C1200AD2D28 /* PushTechSDK.framework */,
-				2BECCACA1B145C1200AD2D28 /* PushTechSDKResources.bundle */,
 			);
 			path = PushTechSDK;
 			sourceTree = "<group>";
@@ -287,10 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BECCACC1B145C1200AD2D28 /* PushTechSDKResources.bundle in Resources */,
 				2B74253F1B145900002B58EE /* Main.storyboard in Resources */,
 				2B7142BB1B7DF9CF0049DB10 /* PSHConfiguration.plist in Resources */,
 				2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */,
+				4D82CF8A1BF62CC0009051F1 /* PushTechSDKResources.bundle in Resources */,
 				2B7425411B145900002B58EE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

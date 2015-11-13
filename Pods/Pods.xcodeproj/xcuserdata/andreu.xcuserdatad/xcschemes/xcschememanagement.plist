@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-PushExampleProject-AMSmoothAlert.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-PushExampleProject-GPUImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-PushExampleProject-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-PushExampleProject.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2BD1DAD2D08DABABEAD578F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A43ADBD912CBAAD7B0048C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84DCE19291F85AEE5031C33B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB903F9092E785F92340BE23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

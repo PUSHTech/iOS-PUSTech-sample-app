@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, PSHLogLevel) {
     /**
      *  Logging is OFF
      */
-    PSHLogLevelNone,
+    PSHLogLevelNone = 0,
     /**
      *  Standard log level ALERT
      */
@@ -106,10 +106,40 @@ typedef NS_ENUM(NSInteger, PSHLogLevel) {
  *  Notification types to use instead of apple's, for an easier setup supporting different iOS SDK versions.
  */
 typedef NS_OPTIONS(NSInteger, PSHNotificationType){
+    /**
+     *
+     */
     PSHNotificationTypeNone  = 0,
+    /**
+     *
+     */
     PSHNotificationTypeBadge = 1 << 0,
+    /**
+     *
+     */
     PSHNotificationTypeAlert = 1 << 1,
+    /**
+     *
+     */
     PSHNotificationTypeSound = 1 << 2
+};
+
+/**
+ *  States of the location adquisition on metrics.
+ */
+typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
+    /**
+     * Never use location metrics.
+     */
+    PSHLocationStateTypeNever  = 0,
+    /**
+     * Always use location on metrics.
+     */
+    PSHLocationStateTypeAlways,
+    /**
+     * Send locations metrics manually.
+     */
+    PSHLocationStateTypeManual
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -203,7 +233,7 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
 /// @name Campaigns
 
 /**
- *  Returns an array of `PSHCampaignDAO` instances.
+ *  Returns an array of `PSHCampaignDAO` instances sorted by date from newer to older.
  */
 @property (nonatomic, readonly) NSArray* campaignList;
 
@@ -248,6 +278,18 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
 
 
 /**
+ *  Use this method to change the current log level.
+ *
+ */
+- (void)setLogLevel:(PSHLogLevel)logLevel;
+
+/**
+ *  Use this method to change the current location configuration.
+ *
+ */
+- (void)setLocationAdquisition:(PSHLocationStateType)state;
+
+/**
  *  Use this method to perfom a Two Factor Authentication using SMS or a phone call if SMS delivery
  *  is not avaliable.
  *
@@ -263,7 +305,7 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
  *                         If the value is 0, it defaults to 300 seconds.
  *                         Range: 60 - 3600 both included.
  */
-- (void)sendAuthenticationSMSToPhoneNumber:(NSInteger)phoneNumber
+- (void)sendAuthenticationSMSToPhoneNumber:(NSString *)phoneNumber
                                countryCode:(NSInteger)countryCode
                                   senderId:(NSString *)senderId
                                  brandName:(NSString *)brandName
@@ -281,7 +323,7 @@ typedef NS_OPTIONS(NSInteger, PSHNotificationType){
  *                         will be used inside the body of all SMS and TTS messages sent (e.g. "Your PIN code is ..")
  *  @param onCompletion    Asynchronously executed block, fired once the operation has finished.
  */
-- (void)sendAuthenticationSMSToPhoneNumber:(NSInteger)phoneNumber
+- (void)sendAuthenticationSMSToPhoneNumber:(NSString *)phoneNumber
                                countryCode:(NSInteger)countryCode
                                   senderId:(NSString *)senderId
                                  brandName:(NSString *)brandName
