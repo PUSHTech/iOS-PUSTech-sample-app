@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "PSHCampaignDAO.h"
 #import "PSHManagerInfo.h"
 
 @interface PSHModel : NSObject
@@ -16,6 +16,8 @@
 -(void)deleteDefaults;
 
 @property (nonatomic, readonly) NSArray* campaignList;
+
+-(void)deleteCampaign:(PSHCampaignDAO*)campaignDAO;
 
 -(void)deleteCampaign:(NSString*)campaignId context:(NSManagedObjectContext*)context;
 

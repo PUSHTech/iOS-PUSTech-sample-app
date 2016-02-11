@@ -19,8 +19,9 @@
 		2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B7425421B145900002B58EE /* LaunchScreen.xib */; };
 		2B7425501B145900002B58EE /* PushExampleProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B74254F1B145900002B58EE /* PushExampleProjectTests.m */; };
 		2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9D32A51B945165006EEFE1 /* CoreLocation.framework */; };
-		4D82CF891BF62CC0009051F1 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */; };
-		4D82CF8A1BF62CC0009051F1 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */; };
+		4D08FDA21C6CFC7600A37F4C /* CampaignListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */; };
+		4D7937631C6CED2B0044FA11 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7937611C6CED2B0044FA11 /* PushTechSDK.framework */; };
+		4D7937641C6CED2B0044FA11 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D7937621C6CED2B0044FA11 /* PushTechSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,10 @@
 		2B74254E1B145900002B58EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B74254F1B145900002B58EE /* PushExampleProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushExampleProjectTests.m; sourceTree = "<group>"; };
 		2B9D32A51B945165006EEFE1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
-		4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
+		4D08FDA01C6CFC7600A37F4C /* CampaignListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignListVC.h; sourceTree = "<group>"; };
+		4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignListVC.m; sourceTree = "<group>"; };
+		4D7937611C6CED2B0044FA11 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
+		4D7937621C6CED2B0044FA11 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
 		9C696B5D9B74379565F152A0 /* libPods-PushExampleProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushExampleProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0E48EF015780EEE5051E5 /* Pods-PushExampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F71A30805A6C15D2AE244543 /* Pods-PushExampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */,
-				4D82CF891BF62CC0009051F1 /* PushTechSDK.framework in Frameworks */,
+				4D7937631C6CED2B0044FA11 /* PushTechSDK.framework in Frameworks */,
 				1FAF20642668B0B6D9E55702 /* libPods-PushExampleProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +130,8 @@
 				2BECCAC81B145C1200AD2D28 /* PushTechSDK */,
 				2B7425371B145900002B58EE /* AppDelegate.h */,
 				2B7425381B145900002B58EE /* AppDelegate.m */,
+				4D08FDA01C6CFC7600A37F4C /* CampaignListVC.h */,
+				4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */,
 				2B74253A1B145900002B58EE /* ViewController.h */,
 				2B74253B1B145900002B58EE /* ViewController.m */,
 				2B74253D1B145900002B58EE /* Main.storyboard */,
@@ -174,8 +179,8 @@
 		2BECCAC81B145C1200AD2D28 /* PushTechSDK */ = {
 			isa = PBXGroup;
 			children = (
-				4D82CF871BF62CC0009051F1 /* PushTechSDK.framework */,
-				4D82CF881BF62CC0009051F1 /* PushTechSDKResources.bundle */,
+				4D7937611C6CED2B0044FA11 /* PushTechSDK.framework */,
+				4D7937621C6CED2B0044FA11 /* PushTechSDKResources.bundle */,
 				2B7142B91B7DF9B20049DB10 /* Configuration */,
 			);
 			path = PushTechSDK;
@@ -250,7 +255,7 @@
 				TargetAttributes = {
 					2B74252F1B145900002B58EE = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = RHZXBN66SX;
+						DevelopmentTeam = GQ85T96E89;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -290,7 +295,7 @@
 				2B74253F1B145900002B58EE /* Main.storyboard in Resources */,
 				2B7142BB1B7DF9CF0049DB10 /* PSHConfiguration.plist in Resources */,
 				2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */,
-				4D82CF8A1BF62CC0009051F1 /* PushTechSDKResources.bundle in Resources */,
+				4D7937641C6CED2B0044FA11 /* PushTechSDKResources.bundle in Resources */,
 				2B7425411B145900002B58EE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D08FDA21C6CFC7600A37F4C /* CampaignListVC.m in Sources */,
 				2B74253C1B145900002B58EE /* ViewController.m in Sources */,
 				2B3E12761B7DDA1100E0BCEC /* NotificationDelegate.m in Sources */,
 				2B7425391B145900002B58EE /* AppDelegate.m in Sources */,
@@ -405,7 +411,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -427,6 +434,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "9fe74f1a-414f-4c12-8f87-ac4b53ff2093";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +457,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -464,6 +473,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "9fe74f1a-414f-4c12-8f87-ac4b53ff2093";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -475,8 +485,8 @@
 			baseConfigurationReference = E3B0E48EF015780EEE5051E5 /* Pods-PushExampleProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PushExampleProject/PushTechSDK",
@@ -485,8 +495,9 @@
 				INFOPLIST_FILE = PushExampleProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushtech.pushdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "665892cb-9e1d-471c-a913-7b7742097371";
+				PROVISIONING_PROFILE = "9fe74f1a-414f-4c12-8f87-ac4b53ff2093";
 			};
 			name = Debug;
 		};
@@ -495,8 +506,8 @@
 			baseConfigurationReference = F71A30805A6C15D2AE244543 /* Pods-PushExampleProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: benjamin rousset (VE9VHY2PSN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PushExampleProject/PushTechSDK",
@@ -505,8 +516,9 @@
 				INFOPLIST_FILE = PushExampleProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushtech.pushdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "665892cb-9e1d-471c-a913-7b7742097371";
+				PROVISIONING_PROFILE = "9fe74f1a-414f-4c12-8f87-ac4b53ff2093";
 			};
 			name = Release;
 		};

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *textFieldButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendTestPushButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
+@property (weak, nonatomic) IBOutlet UIButton *campaignListButton;
 
 @property (nonatomic, assign) BOOL shouldVerifyCode;
 
@@ -31,14 +32,16 @@
     [self setupTapGesture];
 }
 
+/*
 - (void)viewWillAppear:(BOOL)animated
 {
     [self prepareMainViewForAnimation];
 }
+ */
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self animateMainView];
+//    [self animateMainView];
     [self setupTwoFactorTextField];
 }
 
@@ -154,6 +157,13 @@
      }];
 }
 
+- (IBAction)showCampaignListButtonPressed:(id)sender {
+    
+    NSLog(@"Campaign List = %@", [[PSHEngine sharedInstance] campaignList]);
+    
+    // TODO
+}
+
 #pragma mark - Utils
 
 - (void)setupTapGesture
@@ -232,7 +242,8 @@
 {
     [self enumerate:@[self.textFieldButton,
                       self.sendTestPushButton,
-                      self.sendMetricsButton]
+                      self.sendMetricsButton,
+                      self.campaignListButton]
           withBlock:^(id obj) {
               setupBlock(obj);
           }];
