@@ -157,13 +157,6 @@
      }];
 }
 
-- (IBAction)showCampaignListButtonPressed:(id)sender {
-    
-    NSLog(@"Campaign List = %@", [[PSHEngine sharedInstance] campaignList]);
-    
-    // TODO
-}
-
 #pragma mark - Utils
 
 - (void)setupTapGesture

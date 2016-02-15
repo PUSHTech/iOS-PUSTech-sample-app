@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CampaignListVC : UIViewController
+@interface CampaignListVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@end
+
+@interface CampaignCell : UITableViewCell
 
 @end

@@ -7,10 +7,24 @@
 //
 
 #import "CampaignListVC.h"
+#import <PushTechSDK/PushTechSDK.h>
 
 @interface CampaignListVC ()
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSArray *campaignList;
+
+@end
+
+@interface CampaignCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (void)mapData:(PSHCampaignDAO *)campaignDAO;
 
 @end
 
@@ -22,7 +36,11 @@
     
     NSLog(@"CAMPAIGN LIST VC");
     
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.contentView.hidden = YES;
+    
+    self.campaignList = [[PSHEngine sharedInstance] campaignList];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,14 +82,43 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table View Controller stuff
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.campaignList count];
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CampaignCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CampaignCell" forIndexPath:indexPath];
+    
+    [cell mapData:(PSHCampaignDAO *)self.campaignList[indexPath.row]];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+@end
+
+@implementation CampaignCell
+
+- (void)mapData:(PSHCampaignDAO *)campaignDAO {
+    
+    self.titleLabel.text = campaignDAO.title;
+    self.testLabel.text = campaignDAO.text;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+    [formatter setTimeZone:[NSTimeZone localTimeZone]];
+    
+    NSString *stringFromDate = [formatter stringFromDate:campaignDAO.date];
+    
+    self.dateLabel.text = stringFromDate;
+}
 
 @end
