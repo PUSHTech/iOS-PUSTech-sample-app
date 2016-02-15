@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *campaignList;
+@property (nonatomic, strong) NSMutableArray *campaignList;
 
 @end
 
@@ -40,7 +40,7 @@
     self.tableView.delegate = self;
     self.contentView.hidden = YES;
     
-    self.campaignList = [[PSHEngine sharedInstance] campaignList];
+    self.campaignList = [[PSHEngine sharedInstance] campaignList].mutableCopy;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -101,6 +101,42 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PSHCampaignDAO *camp = self.campaignList[indexPath.row];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:camp.URL]) {
+        [[UIApplication sharedApplication] openURL:camp.URL];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *button =
+    [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
+                                       title:@"Delete"
+                                     handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+     {
+         PSHCampaignDAO *campaign = self.campaignList[indexPath.row];
+         [[PSHEngine sharedInstance] deleteCampaign:campaign];
+         
+         [self.campaignList removeObjectAtIndex:indexPath.row];
+         
+         [self.tableView beginUpdates];
+         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+         [self.tableView endUpdates];
+     }];
+    
+    button.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:0 blue:84.0f/255.0f alpha:1.0f];
+    
+    return @[button];
 }
 
 @end
