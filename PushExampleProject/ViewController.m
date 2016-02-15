@@ -32,16 +32,8 @@
     [self setupTapGesture];
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self prepareMainViewForAnimation];
-}
- */
-
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [self animateMainView];
     [self setupTwoFactorTextField];
 }
 
@@ -248,49 +240,6 @@
                                                                 BOOL *stop) {
         block(obj);
     }];
-}
-
-#pragma mark - Animations
-
-- (void)prepareMainViewForAnimation
-{
-    if ([self systemVersionIsPostiOS8]) {
-        CGFloat topPadding = 24;
-        CGFloat initialMainViewVisibleHeight = 22;
-        CGFloat screenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
-        CGFloat initialYTraslation = screenHeight - topPadding - initialMainViewVisibleHeight;
-        
-        self.mainView.layer.transform =
-            CATransform3DMakeTranslation(0,
-                                         initialYTraslation,
-                                         0);
-        [self hideInputs];
-    }
-}
-
-- (void)animateMainView
-{
-    if ([self systemVersionIsPostiOS8]) {
-        
-        void(^showInputsAnimation)(BOOL) = ^(BOOL finished) {
-            [UIView animateKeyframesWithDuration:0.6
-                                           delay:0.2
-                                         options:kNilOptions
-                                      animations:^{
-                                          [self showInputs];
-                                      } completion:nil];
-            
-        };
-        
-        [UIView animateWithDuration:0.88
-                              delay:0.5
-             usingSpringWithDamping:0.72
-              initialSpringVelocity:0.5
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             self.mainView.layer.transform = CATransform3DIdentity;
-                         } completion:showInputsAnimation];
-    }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

@@ -31,10 +31,8 @@
 @implementation CampaignListVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    NSLog(@"CAMPAIGN LIST VC");
+    [super viewDidLoad];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -67,8 +65,6 @@
 }
 
 - (IBAction)closeButtonPressed:(id)sender {
-    
-    NSLog(@"GO BACK");
     
     [UIView animateKeyframesWithDuration:0.5
                                    delay:0.0
