@@ -7,11 +7,6 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
-
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UILabel *twoFactorLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *textFieldButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendTestPushButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
 @property (weak, nonatomic) IBOutlet UIButton *campaignListButton;
@@ -29,55 +24,9 @@
 - (void)viewDidLoad
 {
     [self roundButtons];
-    [self setupTapGesture];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self setupTwoFactorTextField];
 }
 
 #pragma mark - IBActions
-
-- (IBAction)textFieldButtonPressed:(id)sender {
-    [self.textField resignFirstResponder];
-    if (self.shouldVerifyCode) {
-        [[PSHEngine sharedInstance] validateCode:self.textField.text
-                                      completion:^(NSError *error, id obj)
-         {
-             if (error) {
-                 [self showAlertWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                     type:AlertFailure];
-             } else {
-                 [self showAlertWithTitle:@"Sucess!"
-                                  message:@"The code has been verified."
-                                     type:AlertSuccess];
-                 self.shouldVerifyCode = NO;
-                 [self setupTwoFactorTextField];
-             }
-         }];
-    } else {
-        [[PSHEngine sharedInstance] sendAuthenticationSMSToPhoneNumber:self.textField.text
-                                                           countryCode:34
-                                                              senderId:nil
-                                                             brandName:nil
-                                                            completion:^(NSError *error, id obj)
-         {
-             if (error) {
-                 [self showAlertWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                     type:AlertFailure];
-             } else {
-                 [self showAlertWithTitle:@"Success!"
-                                  message:@"Wait for your verification code."
-                                     type:AlertSuccess];
-                 self.shouldVerifyCode = YES;
-                 [self setupTwoFactorTextField];
-             }
-         }];
-    }
-}
 
 - (IBAction)sendMetricsButtonPressed:(id)sender {
     
@@ -122,7 +71,6 @@
     [PSHMetrics sendMetricPhone:@"+15417543010"];
     
     [PSHMetrics sendMetricPurchaseProduct:@"iPhone 6" productId:@"h92j38d7" price:@(799.99) currency:@"USD"];
-
     
     //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];
@@ -151,30 +99,6 @@
 
 #pragma mark - Utils
 
-- (void)setupTapGesture
-{
-    UITapGestureRecognizer *tapGesture =
-        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    [self.view addGestureRecognizer:tapGesture];
-}
-
-- (void)tap:(UITapGestureRecognizer *)tap
-{
-    [self.textField resignFirstResponder];
-}
-
-- (void)setupTwoFactorTextField
-{
-    self.textField.text = @"";
-    if (self.shouldVerifyCode) {
-        self.textField.placeholder = @"Verification code";
-        [self.textFieldButton setTitle:@"Verify code" forState:UIControlStateNormal];
-    } else {
-        self.textField.placeholder = @"Phone number";
-        [self.textFieldButton setTitle:@"Send verification code" forState:UIControlStateNormal];
-    }
-}
-
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message type:(AlertType)type
 {
     self.currentAlert = [[AMSmoothAlertView alloc] initDropAlertWithTitle:title
@@ -194,28 +118,6 @@
     return [[UIApplication sharedApplication] respondsToSelector:selector];
 }
 
-- (void)hideInputs {
-    [self enumerate:@[self.textField,
-                      self.textFieldButton,
-                      self.sendMetricsButton,
-                      self.sendTestPushButton,
-                      self.twoFactorLabel]
-          withBlock:^(id obj) {
-              [(UIView *)obj setAlpha:0];
-          }];
-}
-
-- (void)showInputs {
-    [self enumerate:@[self.textField,
-                      self.textFieldButton,
-                      self.sendMetricsButton,
-                      self.sendTestPushButton,
-                      self.twoFactorLabel]
-          withBlock:^(id obj) {
-              [(UIView *)obj setAlpha:1];
-          }];
-}
-
 - (void)roundButtons
 {
     [self setupButtonsWithBlock:^(UIButton *aButton) {
@@ -225,8 +127,7 @@
 
 - (void)setupButtonsWithBlock:(void(^)(UIButton *aButton))setupBlock
 {
-    [self enumerate:@[self.textFieldButton,
-                      self.sendTestPushButton,
+    [self enumerate:@[self.sendTestPushButton,
                       self.sendMetricsButton,
                       self.campaignListButton]
           withBlock:^(id obj) {

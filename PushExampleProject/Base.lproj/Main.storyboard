@@ -19,100 +19,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2P1-ep-gGo">
-                                <rect key="frame" x="12" y="24" width="576" height="676"/>
+                                <rect key="frame" x="12" y="24" width="576" height="576"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIJ-tN-Q5h">
-                                        <rect key="frame" x="32" y="75" width="512" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQV-Nk-aCG">
+                                        <rect key="frame" x="182" y="273" width="212" height="30"/>
+                                        <color key="backgroundColor" red="0.27058823529411763" green="0.53333333333333333" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="beN-fE-ut3"/>
+                                            <constraint firstAttribute="height" constant="30" id="LEk-zN-Zdb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Two factor authentication:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quX-M1-ibK">
-                                        <rect key="frame" x="32" y="45" width="200" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2e-k4-muT">
-                                        <rect key="frame" x="0.0" y="113" width="576" height="385"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwu-IU-dtt">
-                                                <rect key="frame" x="239" y="6" width="89" height="30"/>
-                                                <color key="backgroundColor" red="0.27058823529411763" green="0.53333333333333333" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Opq-UC-jVA"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="8" minY="6" maxX="8" maxY="6"/>
-                                                <state key="normal" title="Send SMS">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="textFieldButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXv-Ii-uq1"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQV-Nk-aCG">
-                                                <rect key="frame" x="182" y="289" width="212" height="30"/>
-                                                <color key="backgroundColor" red="0.27058823529411763" green="0.53333333333333333" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="LEk-zN-Zdb"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="8" minY="6" maxX="8" maxY="6"/>
-                                                <state key="normal" title="Send a test push notification">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="sendTestPushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u00-Uv-DgL"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIU-Ka-I1E">
-                                                <rect key="frame" x="236" y="332" width="105" height="30"/>
-                                                <color key="backgroundColor" red="0.27058823529411763" green="0.53333333333333333" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="OU3-Gw-ARJ"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="8" maxY="6"/>
-                                                <state key="normal" title="Send metrics">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="sendMetricsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ech-I6-TJq"/>
-                                                </connections>
-                                            </button>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="PushTechLogo" translatesAutoresizingMaskIntoConstraints="NO" id="whq-ej-GPh">
-                                                <rect key="frame" x="206" y="151" width="165" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="5Yu-wG-7ar"/>
-                                                    <constraint firstAttribute="width" constant="165" id="KZW-de-KiQ"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="6" maxX="8" maxY="6"/>
+                                        <state key="normal" title="Send a test push notification">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendTestPushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u00-Uv-DgL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIU-Ka-I1E">
+                                        <rect key="frame" x="235" y="225" width="105" height="30"/>
+                                        <color key="backgroundColor" red="0.27058823529411763" green="0.53333333333333333" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="gIU-Ka-I1E" firstAttribute="top" secondItem="ZQV-Nk-aCG" secondAttribute="bottom" constant="13" id="9eJ-J4-zOT"/>
-                                            <constraint firstItem="Qwu-IU-dtt" firstAttribute="top" secondItem="l2e-k4-muT" secondAttribute="top" constant="6" id="B7j-K2-MVR"/>
-                                            <constraint firstAttribute="centerY" secondItem="whq-ej-GPh" secondAttribute="centerY" constant="30" id="H37-cm-RPM"/>
-                                            <constraint firstAttribute="centerX" secondItem="whq-ej-GPh" secondAttribute="centerX" id="Q4D-gw-oVW"/>
-                                            <constraint firstItem="whq-ej-GPh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qwu-IU-dtt" secondAttribute="bottom" constant="10" id="l2V-yx-yU3"/>
-                                            <constraint firstItem="ZQV-Nk-aCG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="whq-ej-GPh" secondAttribute="bottom" constant="20" id="lJ4-sq-V3u"/>
-                                            <constraint firstAttribute="centerX" secondItem="gIU-Ka-I1E" secondAttribute="centerX" id="ptI-hq-IVX"/>
-                                            <constraint firstAttribute="centerX" secondItem="ZQV-Nk-aCG" secondAttribute="centerX" id="uVk-t7-gQx"/>
-                                            <constraint firstAttribute="bottom" secondItem="gIU-Ka-I1E" secondAttribute="bottom" constant="23" id="ucH-cJ-iEp"/>
-                                            <constraint firstAttribute="centerX" secondItem="Qwu-IU-dtt" secondAttribute="centerX" id="uno-PS-qU0"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGx-1O-qlV">
-                                        <rect key="frame" x="232" y="532" width="112" height="30"/>
-                                        <color key="backgroundColor" red="0.27058823529999998" green="0.53333333329999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="CKS-pr-ySW"/>
+                                            <constraint firstAttribute="height" constant="30" id="OU3-Gw-ARJ"/>
                                         </constraints>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="8" maxY="6"/>
-                                        <state key="normal" title="Campaing List">
+                                        <state key="normal" title="Send metrics">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendMetricsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ech-I6-TJq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGx-1O-qlV">
+                                        <rect key="frame" x="235" y="321" width="107" height="30"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.53333333329999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="6" minY="6" maxX="8" maxY="6"/>
+                                        <state key="normal" title="Campaing list">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -120,20 +63,24 @@
                                             <segue destination="6GJ-qo-NAL" kind="show" id="cmd-1R-TOr"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="PushTechLogo" translatesAutoresizingMaskIntoConstraints="NO" id="whq-ej-GPh">
+                                        <rect key="frame" x="206" y="30" width="165" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="5Yu-wG-7ar"/>
+                                            <constraint firstAttribute="width" constant="165" id="KZW-de-KiQ"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="pIJ-tN-Q5h" firstAttribute="leading" secondItem="quX-M1-ibK" secondAttribute="leading" id="0sd-k6-bSG"/>
-                                    <constraint firstAttribute="bottom" secondItem="YGx-1O-qlV" secondAttribute="bottom" constant="114" id="3bH-Eu-skc"/>
-                                    <constraint firstItem="pIJ-tN-Q5h" firstAttribute="leading" secondItem="2P1-ep-gGo" secondAttribute="leading" constant="32" id="3wu-Ks-riR"/>
-                                    <constraint firstItem="l2e-k4-muT" firstAttribute="leading" secondItem="2P1-ep-gGo" secondAttribute="leading" id="Gdb-Qq-jtj"/>
-                                    <constraint firstItem="l2e-k4-muT" firstAttribute="top" secondItem="pIJ-tN-Q5h" secondAttribute="bottom" constant="8" id="HWQ-ar-rU4"/>
-                                    <constraint firstAttribute="bottom" secondItem="l2e-k4-muT" secondAttribute="bottom" priority="999" constant="178" id="J23-Pt-enu"/>
-                                    <constraint firstItem="YGx-1O-qlV" firstAttribute="centerX" secondItem="2P1-ep-gGo" secondAttribute="centerX" id="Mum-vh-h0a"/>
-                                    <constraint firstAttribute="trailing" secondItem="l2e-k4-muT" secondAttribute="trailing" id="Rke-cw-leA"/>
-                                    <constraint firstItem="pIJ-tN-Q5h" firstAttribute="top" secondItem="2P1-ep-gGo" secondAttribute="top" priority="999" constant="75" id="XLL-J2-nDd"/>
-                                    <constraint firstAttribute="trailing" secondItem="pIJ-tN-Q5h" secondAttribute="trailing" constant="32" id="bd8-No-DVA"/>
-                                    <constraint firstItem="pIJ-tN-Q5h" firstAttribute="top" secondItem="quX-M1-ibK" secondAttribute="bottom" constant="8" id="uv2-wJ-Svq"/>
+                                    <constraint firstItem="whq-ej-GPh" firstAttribute="top" secondItem="2P1-ep-gGo" secondAttribute="top" constant="30" id="DNt-wt-bbT"/>
+                                    <constraint firstItem="ZQV-Nk-aCG" firstAttribute="centerX" secondItem="2P1-ep-gGo" secondAttribute="centerX" id="FBZ-LL-40b"/>
+                                    <constraint firstItem="ZQV-Nk-aCG" firstAttribute="centerY" secondItem="2P1-ep-gGo" secondAttribute="centerY" id="Q6J-3b-G6S"/>
+                                    <constraint firstItem="ZQV-Nk-aCG" firstAttribute="top" secondItem="gIU-Ka-I1E" secondAttribute="bottom" constant="18" id="bNx-n9-gq7"/>
+                                    <constraint firstItem="whq-ej-GPh" firstAttribute="centerX" secondItem="2P1-ep-gGo" secondAttribute="centerX" id="eDi-TI-Tob"/>
+                                    <constraint firstItem="YGx-1O-qlV" firstAttribute="centerX" secondItem="2P1-ep-gGo" secondAttribute="centerX" id="evV-pM-7p1"/>
+                                    <constraint firstItem="YGx-1O-qlV" firstAttribute="top" secondItem="ZQV-Nk-aCG" secondAttribute="bottom" constant="18" id="mhQ-Dp-4TJ"/>
+                                    <constraint firstItem="gIU-Ka-I1E" firstAttribute="centerX" secondItem="2P1-ep-gGo" secondAttribute="centerX" id="wB2-s9-N7m"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -143,16 +90,19 @@
                             <constraint firstItem="2P1-ep-gGo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="24" id="N6t-ir-1Zi"/>
                             <constraint firstItem="2P1-ep-gGo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="eQ5-4r-85c"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2P1-ep-gGo" secondAttribute="bottom" constant="-100" id="j0V-HO-eO7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2P1-ep-gGo" secondAttribute="bottom" id="lPK-wJ-bhT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="j0V-HO-eO7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="campaignListButton" destination="YGx-1O-qlV" id="eC9-OG-DnX"/>
                         <outlet property="mainView" destination="2P1-ep-gGo" id="lpL-Ok-yok"/>
                         <outlet property="sendMetricsButton" destination="gIU-Ka-I1E" id="Vgj-9U-Uhs"/>
                         <outlet property="sendTestPushButton" destination="ZQV-Nk-aCG" id="yll-PK-AAO"/>
-                        <outlet property="textField" destination="pIJ-tN-Q5h" id="0Ot-8U-Fz0"/>
-                        <outlet property="textFieldButton" destination="Qwu-IU-dtt" id="2TC-jr-R30"/>
-                        <outlet property="twoFactorLabel" destination="quX-M1-ibK" id="HYA-HU-Lmx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -268,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaA-gg-Myn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="993"/>
+            <point key="canvasLocation" x="1232" y="185"/>
         </scene>
     </scenes>
     <resources>
