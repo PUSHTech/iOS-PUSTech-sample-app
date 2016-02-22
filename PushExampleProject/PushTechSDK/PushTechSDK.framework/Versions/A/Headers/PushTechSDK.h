@@ -14,3 +14,4 @@
 #import <PushTechSDK/PSHLandingPageTheme.h>
 #import <PushTechSDK/PSHEventBusDelegate.h>
 #import <PushTechSDK/PSHNotificationDelegate.h>
+#import <PushTechSDK/PSHProduct.h>

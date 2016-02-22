@@ -70,7 +70,9 @@
     
     [PSHMetrics sendMetricPhone:@"+15417543010"];
     
-    [PSHMetrics sendMetricPurchaseProduct:@"iPhone 6" productId:@"h92j38d7" price:@(799.99) currency:@"USD"];
+    PSHProduct *iphone6Product = [[PSHProduct alloc] initWithProduct:@"iPhone 6" productId:@"h92j38d7" price:@(799.99) currency:@"USD"];
+    PSHProduct *headsetProduct = [[PSHProduct alloc] initWithProduct:@"Headeset" productId:@"67f5ae09" price:@(89.99) currency:@"USD"];
+    [PSHMetrics sendMetricPurchaseProducts:@[iphone6Product, headsetProduct]];
     
     //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];
