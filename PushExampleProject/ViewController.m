@@ -7,7 +7,6 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
-@property (weak, nonatomic) IBOutlet UIButton *sendTestPushButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
 @property (weak, nonatomic) IBOutlet UIButton *campaignListButton;
 
@@ -80,25 +79,6 @@
     [self showAlertWithTitle:@"Success!" message:@"Metrics sent." type:AlertSuccess];
 }
 
-
-- (IBAction)sendTestPushButtonPressed:(id)sender {
-    [[PSHEngine sharedInstance]
-        sendTestPushNotificationWithAccountID:@""
-                                 masterSecret:@""
-                                   completion:^(NSError *error, id obj)
-     {
-         if (!error) {
-             [self showAlertWithTitle:@"Info"
-                              message:@"Push notification is on it's way..."
-                                 type:AlertInfo];
-         } else {
-             [self showAlertWithTitle:@"Error"
-                              message:@"Something went wrong"
-                                 type:AlertFailure];
-         }
-     }];
-}
-
 #pragma mark - Utils
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message type:(AlertType)type
@@ -129,8 +109,7 @@
 
 - (void)setupButtonsWithBlock:(void(^)(UIButton *aButton))setupBlock
 {
-    [self enumerate:@[self.sendTestPushButton,
-                      self.sendMetricsButton,
+    [self enumerate:@[self.sendMetricsButton,
                       self.campaignListButton]
           withBlock:^(id obj) {
               setupBlock(obj);
