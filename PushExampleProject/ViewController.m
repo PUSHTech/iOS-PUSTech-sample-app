@@ -9,6 +9,10 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
 @property (weak, nonatomic) IBOutlet UIButton *campaignListButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendUserData;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *userEmail;
 
 @property (nonatomic, assign) BOOL shouldVerifyCode;
 
@@ -23,9 +27,37 @@
 - (void)viewDidLoad
 {
     [self roundButtons];
+    [_firstName setDelegate:self];
+    [_lastName setDelegate:self];
+    [_userEmail setDelegate:self];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)_firstName
+{
+    [_firstName resignFirstResponder];
+    [_lastName resignFirstResponder];
+    [_userEmail resignFirstResponder];
+
+    return YES;
+}
+
+
 #pragma mark - IBActions
+
+- (IBAction)sendUserDataButtonPressed:(id)sender {
+    
+    [PSHMetrics sendMetricFirstName:_firstName.text];
+    [PSHMetrics sendMetricLastName:_lastName.text];
+    [PSHMetrics sendMetricEmail:_userEmail.text];
+    
+    [self.view endEditing:YES];
+    
+    //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
+    [PSHMetrics forceSendMetrics];
+    
+    [self showAlertWithTitle:@"Success!" message:@"Metrics sent." type:AlertSuccess];
+}
+
 
 - (IBAction)sendMetricsButtonPressed:(id)sender {
     
@@ -60,6 +92,10 @@
     [PSHMetrics sendMetricTwitterLogin];
     
     [PSHMetrics sendMetricGoogleLogin];
+    
+    [PSHMetrics sendMetricRegister];
+    
+    [PSHMetrics sendMetricLogin];
     
     [PSHMetrics sendMetricFirstName:@"John"];
     
@@ -110,6 +146,7 @@
 - (void)setupButtonsWithBlock:(void(^)(UIButton *aButton))setupBlock
 {
     [self enumerate:@[self.sendMetricsButton,
+                      self.sendUserData,
                       self.campaignListButton]
           withBlock:^(id obj) {
               setupBlock(obj);

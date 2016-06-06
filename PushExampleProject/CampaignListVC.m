@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imagecampaign;
 
 - (void)mapData:(PSHCampaignDAO *)campaignDAO;
 
@@ -143,6 +144,24 @@
     
     self.titleLabel.text = campaignDAO.title;
     self.testLabel.text = campaignDAO.text;
+    
+//    NSURL *url = [NSURL URLWithString:[campaignDAO.thumbnailURL absoluteString]];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    UIImage *image = [UIImage imageWithData:data];
+//    [self.imagecampaign setImage:image];
+//    self.imagecampaign.image = image;
+    
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+//        //Background Thread
+//        NSURL *url = [NSURL URLWithString:[campaignDAO.thumbnailURL absoluteString]];
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        UIImage *image = [UIImage imageWithData:data];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^(void){
+//            //Run UI Updates
+//            self.imagecampaign.image = image;
+//        });
+//    });
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];

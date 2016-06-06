@@ -6,6 +6,7 @@
 @interface PSHMetrics (PSHSDKMetrics)
 
 - (void)sendReceivedCampaignMetricWithId:(NSString *)campaignId;
+- (void)sendOpenCampaignMetricWithId:(NSString *)campaignId;
 - (void)sendInternalMetrics;
 - (void)setupMetricNotifications;
 
