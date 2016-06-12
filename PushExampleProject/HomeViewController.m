@@ -1,46 +1,48 @@
+//
+//  HomeViewController.m
+//  PushExampleProject
+//
+//  Created by Ben Cortes on 06/06/16.
+//  Copyright © 2016 PushTech. All rights reserved.
+//
 
 #import <PushTechSDK/PushTechSDK.h>
 #import <AMSmoothAlert/AMSmoothAlertView.h>
+#import "HomeViewController.h"
 
-#import "ViewController.h"
-
-@interface ViewController ()
-
+@interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
-@property (weak, nonatomic) IBOutlet UIButton *campaignListButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendUserData;
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
-
-@property (nonatomic, assign) BOOL shouldVerifyCode;
-
 @property (nonatomic) AMSmoothAlertView *currentAlert;
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
     [self roundButtons];
-    [_firstName setDelegate:self];
-    [_lastName setDelegate:self];
-    [_userEmail setDelegate:self];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)_firstName
 {
-    [_firstName resignFirstResponder];
-    [_lastName resignFirstResponder];
-    [_userEmail resignFirstResponder];
-
+    [self.firstName resignFirstResponder];
+    [self.lastName resignFirstResponder];
+    [self.userEmail resignFirstResponder];
+    
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 
 #pragma mark - IBActions
 
@@ -123,7 +125,7 @@
                                                                   andText:message
                                                           andCancelButton:NO
                                                              forAlertType:type];
-
+    
     __weak __typeof(self) wself = self;
     self.currentAlert.completionBlock = ^(AMSmoothAlertView *alert, UIButton *button){
         wself.currentAlert = nil;
@@ -146,8 +148,7 @@
 - (void)setupButtonsWithBlock:(void(^)(UIButton *aButton))setupBlock
 {
     [self enumerate:@[self.sendMetricsButton,
-                      self.sendUserData,
-                      self.campaignListButton]
+                      self.sendUserData]
           withBlock:^(id obj) {
               setupBlock(obj);
           }];
@@ -168,5 +169,21 @@
         [self.currentAlert dismissAlertView];
     }
 }
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

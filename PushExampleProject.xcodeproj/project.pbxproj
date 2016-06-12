@@ -13,15 +13,16 @@
 		2B7142BB1B7DF9CF0049DB10 /* PSHConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7142BA1B7DF9CF0049DB10 /* PSHConfiguration.plist */; };
 		2B7425361B145900002B58EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7425351B145900002B58EE /* main.m */; };
 		2B7425391B145900002B58EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7425381B145900002B58EE /* AppDelegate.m */; };
-		2B74253C1B145900002B58EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B74253B1B145900002B58EE /* ViewController.m */; };
 		2B74253F1B145900002B58EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B74253D1B145900002B58EE /* Main.storyboard */; };
 		2B7425411B145900002B58EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7425401B145900002B58EE /* Images.xcassets */; };
 		2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B7425421B145900002B58EE /* LaunchScreen.xib */; };
 		2B7425501B145900002B58EE /* PushExampleProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B74254F1B145900002B58EE /* PushExampleProjectTests.m */; };
 		2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9D32A51B945165006EEFE1 /* CoreLocation.framework */; };
-		4D08FDA21C6CFC7600A37F4C /* CampaignListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */; };
 		80505B311D058622004ECF12 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80505B2F1D058622004ECF12 /* PushTechSDK.framework */; };
 		80505B321D058622004ECF12 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80505B301D058622004ECF12 /* PushTechSDKResources.bundle */; };
+		80505B351D05F336004ECF12 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B341D05F336004ECF12 /* HomeViewController.m */; };
+		80505B381D05FF32004ECF12 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B371D05FF32004ECF12 /* MessageViewController.m */; };
+		80505B3B1D061194004ECF12 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B3A1D061194004ECF12 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,6 @@
 		2B7425351B145900002B58EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B7425371B145900002B58EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B7425381B145900002B58EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B74253A1B145900002B58EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2B74253B1B145900002B58EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B74253E1B145900002B58EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B7425401B145900002B58EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B7425431B145900002B58EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -54,10 +53,14 @@
 		2B74254E1B145900002B58EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B74254F1B145900002B58EE /* PushExampleProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushExampleProjectTests.m; sourceTree = "<group>"; };
 		2B9D32A51B945165006EEFE1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4D08FDA01C6CFC7600A37F4C /* CampaignListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignListVC.h; sourceTree = "<group>"; };
-		4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignListVC.m; sourceTree = "<group>"; };
 		80505B2F1D058622004ECF12 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
 		80505B301D058622004ECF12 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
+		80505B331D05F336004ECF12 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		80505B341D05F336004ECF12 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		80505B361D05FF32004ECF12 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		80505B371D05FF32004ECF12 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		80505B391D061194004ECF12 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		80505B3A1D061194004ECF12 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9C696B5D9B74379565F152A0 /* libPods-PushExampleProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushExampleProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0E48EF015780EEE5051E5 /* Pods-PushExampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F71A30805A6C15D2AE244543 /* Pods-PushExampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,10 +133,12 @@
 				2BECCAC81B145C1200AD2D28 /* PushTechSDK */,
 				2B7425371B145900002B58EE /* AppDelegate.h */,
 				2B7425381B145900002B58EE /* AppDelegate.m */,
-				4D08FDA01C6CFC7600A37F4C /* CampaignListVC.h */,
-				4D08FDA11C6CFC7600A37F4C /* CampaignListVC.m */,
-				2B74253A1B145900002B58EE /* ViewController.h */,
-				2B74253B1B145900002B58EE /* ViewController.m */,
+				80505B331D05F336004ECF12 /* HomeViewController.h */,
+				80505B341D05F336004ECF12 /* HomeViewController.m */,
+				80505B361D05FF32004ECF12 /* MessageViewController.h */,
+				80505B371D05FF32004ECF12 /* MessageViewController.m */,
+				80505B391D061194004ECF12 /* WebViewController.h */,
+				80505B3A1D061194004ECF12 /* WebViewController.m */,
 				2B74253D1B145900002B58EE /* Main.storyboard */,
 				2B7425401B145900002B58EE /* Images.xcassets */,
 				2B7425421B145900002B58EE /* LaunchScreen.xib */,
@@ -347,11 +352,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D08FDA21C6CFC7600A37F4C /* CampaignListVC.m in Sources */,
-				2B74253C1B145900002B58EE /* ViewController.m in Sources */,
 				2B3E12761B7DDA1100E0BCEC /* NotificationDelegate.m in Sources */,
 				2B7425391B145900002B58EE /* AppDelegate.m in Sources */,
+				80505B3B1D061194004ECF12 /* WebViewController.m in Sources */,
 				2B3E12791B7DDA2700E0BCEC /* EventBusDelegate.m in Sources */,
+				80505B351D05F336004ECF12 /* HomeViewController.m in Sources */,
+				80505B381D05FF32004ECF12 /* MessageViewController.m in Sources */,
 				2B7425361B145900002B58EE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
