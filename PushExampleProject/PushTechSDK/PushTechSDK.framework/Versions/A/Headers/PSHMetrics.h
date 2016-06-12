@@ -164,7 +164,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *
  *  @param facebookId   Facebook ID.
  */
-+ (void)sendMetricFacbookID:(NSString *)facebookId;
++ (void)sendMetricFacebookID:(NSString *)facebookId;
 
 /**
  *  Use this method to send a twitter ID metric.
@@ -346,7 +346,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *  @param facebookId   Facebook ID.
  *  @param state        Send only when value changed. Default is NO.
  */
-+ (void)sendMetricFacbookID:(NSString *)facebookId onChange:(BOOL)state;
++ (void)sendMetricFacebookID:(NSString *)facebookId onChange:(BOOL)state;
 
 /**
  *  Use this method to send a twitter ID metric.

@@ -19,14 +19,30 @@
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupPushTechSDK];
+    
+    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification) {
+        // App received notification from remote
+        NSLog(@"app received notification from remote%@",notification);
+        [self application:application didReceiveRemoteNotification:notification];
+    }else{
+        // App did not receive notification
+    }
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
 }
 
 - (void)setupPushTechSDK
 {
     [self setupLandingPageTheme];
     [PSHEngine startWithEventBusDelegate:self.eventBusDelegate = [EventBusDelegate new]
-                    notificationDelegate:self.notificationDelegate = [NotificationDelegate new]];
+                    notificationDelegate:self.notificationDelegate = [NotificationDelegate new]];     
 }
 
 - (void)setupLandingPageTheme
@@ -37,14 +53,18 @@
     [PSHLandingPage setDelegate:self];
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+
+}
+
 - (void)willShowLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willshow landing page");
+    NSLog(@"will show landing page");
 }
 
 - (void)willDismissLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willdismiss landing page");
+    NSLog(@"will dismiss landing page");
 }
 - (BOOL)shouldNavigateToPageWithURLRequest:(NSURLRequest *)request
 {
