@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
+@property (weak, nonatomic) IBOutlet UITextField *userPhone;
+
 @property (nonatomic) AMSmoothAlertView *currentAlert;
 
 @end
@@ -36,6 +38,8 @@
     [self.firstName resignFirstResponder];
     [self.lastName resignFirstResponder];
     [self.userEmail resignFirstResponder];
+    [self.userPhone resignFirstResponder];
+
     
     return YES;
 }
@@ -51,6 +55,8 @@
     [PSHMetrics sendMetricFirstName:_firstName.text];
     [PSHMetrics sendMetricLastName:_lastName.text];
     [PSHMetrics sendMetricEmail:_userEmail.text];
+    [PSHMetrics sendMetricEmail:_userPhone.text];
+
     
     [self.view endEditing:YES];
     
