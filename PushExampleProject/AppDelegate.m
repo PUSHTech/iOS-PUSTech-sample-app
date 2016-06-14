@@ -1,6 +1,5 @@
 
 #import <PushTechSDK/PushTechSDK.h>
-
 #import "AppDelegate.h"
 #import "NotificationDelegate.h"
 #import "EventBusDelegate.h"
@@ -12,6 +11,7 @@
 
 @end
 
+
 @implementation AppDelegate
 
 
@@ -22,21 +22,20 @@
     
     NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (notification) {
-        // App received notification from remote
-        NSLog(@"app received notification from remote%@",notification);
-        [self application:application didReceiveRemoteNotification:notification];
+        // App open from remote Push notification
     }else{
-        // App did not receive notification
+        // Did not open from remote Push notification
     }
     
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+- (void)setBadgeTabBar
 {
     UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
     [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
 }
+
 
 - (void)setupPushTechSDK
 {
@@ -71,5 +70,6 @@
     NSLog(@"will navigate");
     return YES;
 }
+
 
 @end

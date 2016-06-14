@@ -199,13 +199,11 @@
     
     [task resume];
 
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
     [formatter setTimeZone:[NSTimeZone localTimeZone]];
     NSString *stringFromDate = [formatter stringFromDate:campaignDAO.date];
     self.dateLabel.text = stringFromDate;
-    
 
 }
 

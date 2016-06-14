@@ -5,5 +5,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)setBadgeTabBar;
+
 @end
 

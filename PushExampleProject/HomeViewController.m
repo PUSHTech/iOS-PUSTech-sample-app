@@ -10,6 +10,7 @@
 #import <AMSmoothAlert/AMSmoothAlertView.h>
 #import "HomeViewController.h"
 
+
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *sendMetricsButton;
@@ -22,6 +23,7 @@
 @property (nonatomic) AMSmoothAlertView *currentAlert;
 
 @end
+
 
 @implementation HomeViewController
 
@@ -39,7 +41,6 @@
     [self.lastName resignFirstResponder];
     [self.userEmail resignFirstResponder];
     [self.userPhone resignFirstResponder];
-
     
     return YES;
 }
@@ -56,7 +57,6 @@
     [PSHMetrics sendMetricLastName:_lastName.text];
     [PSHMetrics sendMetricEmail:_userEmail.text];
     [PSHMetrics sendMetricEmail:_userPhone.text];
-
     
     [self.view endEditing:YES];
     
@@ -125,6 +125,8 @@
 
 #pragma mark - Utils
 
+
+
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message type:(AlertType)type
 {
     self.currentAlert = [[AMSmoothAlertView alloc] initDropAlertWithTitle:title
@@ -192,4 +194,9 @@
 }
 */
 
+
 @end
+
+
+
+
