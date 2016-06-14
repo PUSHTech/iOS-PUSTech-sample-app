@@ -2,6 +2,5 @@ CLANG_MODULES_AUTOLINK = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AMSmoothAlert" "${PODS_ROOT}/Headers/Public/GPUImage" "${PODS_ROOT}/Headers/Public/MagicalRecord"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AMSmoothAlert" -isystem "${PODS_ROOT}/Headers/Public/GPUImage" -isystem "${PODS_ROOT}/Headers/Public/MagicalRecord"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-PushExampleProject-AMSmoothAlert" -l"Pods-PushExampleProject-GPUImage" -l"Pods-PushExampleProject-MagicalRecord" -framework "AVFoundation" -framework "CoreData" -framework "CoreGraphics" -framework "CoreMedia" -framework "Foundation" -framework "OpenGLES" -framework "QuartzCore" -framework "UIKit"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AMSmoothAlert" -l"GPUImage" -l"MagicalRecord" -framework "AVFoundation" -framework "CoreData" -framework "CoreGraphics" -framework "CoreMedia" -framework "Foundation" -framework "OpenGLES" -framework "QuartzCore" -framework "UIKit"
 PODS_ROOT = ${SRCROOT}/Pods
