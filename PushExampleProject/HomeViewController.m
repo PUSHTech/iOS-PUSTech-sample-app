@@ -56,7 +56,7 @@
     [PSHMetrics sendMetricFirstName:_firstName.text];
     [PSHMetrics sendMetricLastName:_lastName.text];
     [PSHMetrics sendMetricEmail:_userEmail.text];
-    [PSHMetrics sendMetricEmail:_userPhone.text];
+    [PSHMetrics sendMetricPhone:_userPhone.text];
     
     [self.view endEditing:YES];
     
