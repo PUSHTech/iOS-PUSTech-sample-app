@@ -22,9 +22,9 @@
     
     NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (notification) {
-        // App open from remote Push notification
+        NSLog(@"App open from remote Push notification");
     }else{
-        // Did not open from remote Push notification
+        NSLog(@"Did not open from remote Push notification");
     }
     
     return YES;
@@ -50,10 +50,6 @@
     theme.borderColor = [UIColor colorWithRed:236.0/255.0 green:0 blue:84.0/255.0 alpha:1.0];
     [PSHLandingPage useTheme:theme];
     [PSHLandingPage setDelegate:self];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-
 }
 
 - (void)willShowLandingPageWithURLString:(NSString *)URLString

@@ -225,6 +225,26 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
        forNotificationTypes:(PSHNotificationType)notifications;
 
 /**
+ *  Use this method to register custom actions for interactive notifications.
+ *
+ *  @param categoryID           Identifier for the new category of actions.
+ *  @param notificationActions  Array of actions, UIMutableUserNotificationAction objects.
+ */
+- (BOOL)registerNotificationInteraction:(NSString *)categoryID
+                                actions:(NSArray<UIMutableUserNotificationAction *>*)notificationActions;
+
+/**
+ *  Use this method to register custom actions for interactive notifications. Actions are by default non destructive and authentication required.
+ *
+ *  @param categoryID           Identifier for the new category of actions.
+ *  @param buttonLabels         Array of button labels.
+ *  @param buttonIdentifiers    Array of action identifiers.
+ */
+- (BOOL)registerNotificationInteraction:(NSString *)categoryID
+                                 labels:(NSArray<NSString *>*)buttonLabels
+                            identifiers:(NSArray<NSString *>*)buttonIdentifiers;
+
+/**
  *  Removes any data from the model.
  */
 -(void)clean;
