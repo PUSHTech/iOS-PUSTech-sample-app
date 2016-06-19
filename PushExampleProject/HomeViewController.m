@@ -63,7 +63,7 @@
     
     [self.view endEditing:YES];
     
-    //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
+    // If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];
     
     [self showAlertWithTitle:@"Success!" message:@"Metrics sent." type:AlertSuccess];
@@ -72,7 +72,7 @@
 
 - (IBAction)sendMetricsButtonPressed:(id)sender {
     
-    //Showcase of all the metrics avaliable.
+    // Showcase of all the metrics avaliable.
     
     // Custom metrics
     [PSHMetrics sendCustomMetricBoolean:YES type:@"boolean_type" subtype:@"boolean_subtype"];
@@ -117,10 +117,10 @@
     [PSHMetrics sendMetricPhone:@"+15417543010"];
     
     PSHProduct *iphone6Product = [[PSHProduct alloc] initWithProduct:@"iPhone 6" productId:@"h92j38d7" price:@(799.99) currency:@"USD"];
-    PSHProduct *headsetProduct = [[PSHProduct alloc] initWithProduct:@"Headeset" productId:@"67f5ae09" price:@(89.99) currency:@"USD"];
+    PSHProduct *headsetProduct = [[PSHProduct alloc] initWithProduct:@"Headset" productId:@"67f5ae09" price:@(89.99) currency:@"USD"];
     [PSHMetrics sendMetricPurchaseProducts:@[iphone6Product, headsetProduct]];
     
-    //If you don't force send the metrics, the SDK will do it for you every 5 minutes.
+    // If you don't force send the metrics, the SDK will do it for you every 5 minutes.
     [PSHMetrics forceSendMetrics];
     
     [self showAlertWithTitle:@"Success!" message:@"Metrics sent." type:AlertSuccess];

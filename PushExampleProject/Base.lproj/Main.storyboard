@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ud-54-IvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="561"/>
+            <point key="canvasLocation" x="1461" y="561"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="n76-tt-sY3">
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjL-Sn-oxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405" y="561"/>
+            <point key="canvasLocation" x="2217" y="561"/>
         </scene>
         <!--Home-->
         <scene sceneID="T05-ft-VGd">
@@ -286,11 +286,52 @@
                     <connections>
                         <segue destination="ERR-ze-Ri2" kind="relationship" relationship="viewControllers" id="aFM-3d-Fah"/>
                         <segue destination="avE-c4-qTt" kind="relationship" relationship="viewControllers" id="Kbs-ND-Ndp"/>
+                        <segue destination="A17-EY-seR" kind="relationship" relationship="viewControllers" id="1i6-BE-yJn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFR-hv-x5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1029" y="113"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="43K-wA-Yqw">
+            <objects>
+                <viewController id="gxf-dM-Jvb" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u8v-0s-Znq"/>
+                        <viewControllerLayoutGuide type="bottom" id="57N-43-cbk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wVP-s1-ngO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Subscription to Push mensager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-og-9Tz">
+                                <rect key="frame" x="147" y="170" width="305" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeB-8X-Dg8">
+                                <rect key="frame" x="276" y="209" width="51" height="31"/>
+                                <color key="onTintColor" red="0.0" green="0.70323890450000004" blue="0.99918693300000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MeB-8X-Dg8" firstAttribute="top" secondItem="8Yr-og-9Tz" secondAttribute="bottom" constant="18" id="6zX-2U-frV"/>
+                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="centerX" secondItem="wVP-s1-ngO" secondAttribute="centerX" id="7Kg-F8-6TH"/>
+                            <constraint firstItem="MeB-8X-Dg8" firstAttribute="centerX" secondItem="wVP-s1-ngO" secondAttribute="centerX" id="D9d-cd-LYE"/>
+                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="top" secondItem="u8v-0s-Znq" secondAttribute="bottom" constant="106" id="iPx-kH-ejM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pmh-Va-veS"/>
+                    <connections>
+                        <outlet property="pushSwitch" destination="MeB-8X-Dg8" id="xNo-OB-ijy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pS8-zy-aHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217" y="929"/>
         </scene>
         <!--Message Center-->
         <scene sceneID="rGu-Bf-vLb">
@@ -309,12 +350,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83B-yd-veX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="561"/>
+            <point key="canvasLocation" x="631" y="561"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="4Hb-S5-3wg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A17-EY-seR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="6la-wg-Rw7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5wW-z8-IQR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gxf-dM-Jvb" kind="relationship" relationship="rootViewController" id="e8J-q6-FtT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAB-Hr-Iez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029" y="929"/>
         </scene>
     </scenes>
     <resources>
         <image name="HomeIcon" width="30" height="30"/>
         <image name="PushTechLogo" width="165" height="23"/>
+        <image name="Settings" width="30" height="30"/>
         <image name="message" width="30" height="30"/>
     </resources>
 </document>
