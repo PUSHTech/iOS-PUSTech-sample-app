@@ -305,28 +305,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Subscription to Push mensager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-og-9Tz">
-                                <rect key="frame" x="147" y="170" width="305" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Subscription to Push Notification:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-og-9Tz">
+                                <rect key="frame" x="139" y="156" width="322" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogR-9z-ezI">
+                                <rect key="frame" x="238" y="187" width="124" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9Ma-VV-Ajo"/>
+                                    <constraint firstAttribute="width" constant="124" id="u4d-r5-MV0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeB-8X-Dg8">
-                                <rect key="frame" x="276" y="209" width="51" height="31"/>
+                                <rect key="frame" x="276" y="214" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.70323890450000004" blue="0.99918693300000005" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MeB-8X-Dg8" firstAttribute="top" secondItem="8Yr-og-9Tz" secondAttribute="bottom" constant="18" id="6zX-2U-frV"/>
-                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="centerX" secondItem="wVP-s1-ngO" secondAttribute="centerX" id="7Kg-F8-6TH"/>
-                            <constraint firstItem="MeB-8X-Dg8" firstAttribute="centerX" secondItem="wVP-s1-ngO" secondAttribute="centerX" id="D9d-cd-LYE"/>
-                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="top" secondItem="u8v-0s-Znq" secondAttribute="bottom" constant="106" id="iPx-kH-ejM"/>
+                            <constraint firstItem="ogR-9z-ezI" firstAttribute="centerX" secondItem="MeB-8X-Dg8" secondAttribute="centerX" id="Jk3-F1-GKZ"/>
+                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="centerX" secondItem="ogR-9z-ezI" secondAttribute="centerX" id="XQA-6R-8m9"/>
+                            <constraint firstItem="MeB-8X-Dg8" firstAttribute="top" secondItem="ogR-9z-ezI" secondAttribute="bottom" constant="6" id="alE-68-rSC"/>
+                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="top" secondItem="u8v-0s-Znq" secondAttribute="bottom" constant="92" id="bcN-jy-XpC"/>
+                            <constraint firstItem="ogR-9z-ezI" firstAttribute="top" secondItem="8Yr-og-9Tz" secondAttribute="bottom" constant="10" id="sK4-Ao-M6K"/>
+                            <constraint firstItem="8Yr-og-9Tz" firstAttribute="centerX" secondItem="wVP-s1-ngO" secondAttribute="centerX" id="tKx-Yc-hhX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pmh-Va-veS"/>
                     <connections>
                         <outlet property="pushSwitch" destination="MeB-8X-Dg8" id="xNo-OB-ijy"/>
+                        <outlet property="state" destination="ogR-9z-ezI" id="F2u-sp-aud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pS8-zy-aHn" userLabel="First Responder" sceneMemberID="firstResponder"/>

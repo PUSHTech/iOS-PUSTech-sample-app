@@ -35,7 +35,6 @@
     // Do any additional setup after loading the view.
     [self roundButtons];
     // Register custom action
-    [[PSHEngine sharedInstance] registerNotificationInteraction:@"CATEGORY_LIKE_DISLIKE" labels:@[@"Hola", @"Adeu"] identifiers:@[@"ACTION_HOLA", @"ACTION_ADEU"]];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)_firstName

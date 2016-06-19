@@ -12,6 +12,8 @@
 @interface SettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UISwitch *pushSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *state;
+
 
 @end
 
@@ -32,11 +34,12 @@
 
 - (void)changeSwitch:(id)sender{
     if([sender isOn]){
-        NSLog(@"Switch is ON");
         [PSHMetrics sendMetricSubscribe];
+        self.state.text = @"Subscribed";
+        
     } else{
-        NSLog(@"Switch is OFF");
         [PSHMetrics sendMetricUnsubscribe];
+        self.state.text = @"Unsubscribed";
     }
 }
 
