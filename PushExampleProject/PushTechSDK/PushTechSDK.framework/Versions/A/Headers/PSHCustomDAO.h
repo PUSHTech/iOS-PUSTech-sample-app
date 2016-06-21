@@ -1,5 +1,5 @@
 /**
- *  Data Access Object for a Push Technologies Manager custom notification. Property names are self explanatory.
+ *  Data Access Object for a PUSHTech Manager custom notification. Property names are self explanatory.
  */
 
 #import <Foundation/Foundation.h>

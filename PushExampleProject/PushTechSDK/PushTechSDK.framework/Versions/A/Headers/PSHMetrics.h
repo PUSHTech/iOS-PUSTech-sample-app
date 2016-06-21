@@ -66,12 +66,12 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
 + (void)sendMetricCountry:(NSString *)country;
 
 /**
- *  Use this method to send a Unsubscribe metric.
+ *  Use this method to Unsubscribe to Push Notification.
  */
 + (void)sendMetricUnsubscribe;
 
 /**
- *  Use this method to send a Unsubscribe metric.
+ *  Use this method to Subscribe to Push Notification.
  */
 + (void)sendMetricSubscribe;
 

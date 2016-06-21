@@ -36,10 +36,14 @@
     if([sender isOn]){
         [PSHMetrics sendMetricSubscribe];
         self.state.text = @"Subscribed";
+        // If you don't force send the metrics, the SDK will do it for you every 5 minutes.
+        [PSHMetrics forceSendMetrics];
         
     } else{
         [PSHMetrics sendMetricUnsubscribe];
         self.state.text = @"Unsubscribed";
+        // If you don't force send the metrics, the SDK will do it for you every 5 minutes.
+        [PSHMetrics forceSendMetrics];
     }
 }
 
