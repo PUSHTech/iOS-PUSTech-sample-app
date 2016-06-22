@@ -15,20 +15,22 @@ Learn about your users, create powerful campaign and automation from PUSHTech™
 - Need help ? Contact us and we will help you https://www.pushtech.com/contact
 
 
+
 ## Send normal or custom interactive push notifications
-<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview2.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview2.jpg" align="left" width="260" ></a>
+
+![alt tag](https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview2.jpg)
 
 ## Manage custom interactions
 
 You can implement easily your custom interaction within your app as landing page, in app message, deep linking, custom method...
 
-<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview.jpg" align="left" width="260" ></a>
+![alt tag](https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview.jpg)
 
 ## Message center and Notification subscription management
 
 List all yours campaign easily with your custom design.
 
-<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg" align="left" width="260" ></a>
+![alt tag](https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg)
 
 
 
