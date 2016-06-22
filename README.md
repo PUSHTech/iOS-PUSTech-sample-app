@@ -1,12 +1,43 @@
-# PushTech SDK Example
-This is an interactive example of the PushTech SDK so you can play with it's features.
- 
-Create an account at: https://www.pushtech.com, register your app and start playing around with the SDK!
+# PushTech iOS SDK Project Example
 
-#License
+The PUSHTech iOS SDK enables your app to send metrics and receive push notifications in the easiest way. 
+Learn about your users, create powerful campaign and automation from PUSHTech™ Marketing cloud.
+ 
+## General setup
+- Create an account: https://www.pushtech.com/contact  Contact us in order to receive an invite for a new account
+
+- Setup the iOS certificates by following our guide http://developers.pushtech.com/ios/setup-certificates
+
+- Setup the SDK documentation http://developers.pushtech.com/ios/push-sdk-setup
+
+- Download the latest SDK http://developers.pushtech.com/ios
+
+- Need help ? Contact us and we will help you https://www.pushtech.com/contact
+
+
+## Send normal or custom interactive push notifications
+<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview2.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview2.jpg" align="left" width="260" ></a>
+
+## Manage custom interactions
+
+You can implement easily your custom interaction within your app as landing page, in app message, deep linking, custom method...
+
+<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview.jpg" align="left" width="260" ></a>
+
+## Message center and Notification subscription management
+
+List all yours campaign easily with your custom design.
+
+<a href="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg"><img src="https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg" align="left" width="260" ></a>
+
+
+
+
+
+## License
 
     The MIT License (MIT)
-    Copyright (c) 2015 PUSHTech
+    Copyright (c) 2016 PUSHTech
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
