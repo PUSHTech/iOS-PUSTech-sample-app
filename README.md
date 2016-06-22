@@ -8,7 +8,7 @@ Learn about your users, create powerful campaign and automation from PUSHTech™
 
 - Setup the iOS certificates by following our guide http://developers.pushtech.com/ios/setup-certificates
 
-- Setup the SDK documentation http://developers.pushtech.com/ios/push-sdk-setup
+- Setup the iOS SDK by following our guide http://developers.pushtech.com/ios/push-sdk-setup
 
 - Download the latest SDK http://developers.pushtech.com/ios
 
