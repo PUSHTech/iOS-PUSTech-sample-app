@@ -9,7 +9,7 @@
 
 - (BOOL)shouldPerformDefaultActionForRemoteNotification:(PSHNotification *)notification
                                       completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
+{    
     if ([self applicationIsInBackground]) {
         // App is in background
     } else {
@@ -24,6 +24,7 @@
         }
     }
     completionHandler(UIBackgroundFetchResultNewData);
+    
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] setBadgeTabBar];
     
     return YES;
@@ -39,10 +40,19 @@
     [alert show];
 }
 
+- (void)performInteraction:(NSString *)actionID onNotification:(PSHNotification *)notification {
+    
+    // Handle your interactive Push notification when a user select one of the options
+    NSLog(@"PUSH action = %@ on notification = %@", actionID, notification);
+    [self showAlertWithTitle:actionID subtitle:@"Call your method to handle the interative Push notification!"];
+}
+
 - (BOOL)applicationIsInBackground
 {
     return ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground ||
             [UIApplication sharedApplication].applicationState == UIApplicationStateInactive);
 }
+
+
 
 @end

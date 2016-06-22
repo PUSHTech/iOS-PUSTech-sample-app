@@ -146,7 +146,7 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- *  `PSHEngine` brings developers a tool to interact with Push Technologies API and query the model.<br />
+ *  `PSHEngine` brings developers a tool to interact with PUSHTech API and query the model.<br />
  *  All the API calls are performed in the background. Methods involved in API queries accept block parameter of type `PSHAsyncSimpleBlock` which signature is:
  *
  *  <pre>typedef void(^PSHAsyncSimpleBlock)(NSError*)</pre>
@@ -170,12 +170,12 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
 - (void)setPushNotificationDelegate:(id<PSHNotificationDelegate>)notificationDelegate;
 
 /**
- *  Initializes the engine with Push Technologies app credentials and logging level. Should be called ideally inside `application:didFinishLaunchingWithOptions:`
+ *  Initializes the engine with PUSHTech app credentials and logging level. Should be called ideally inside `application:didFinishLaunchingWithOptions:`
  *  and before any other method or property of the SDK.<br/>
  *  The first time this method is being called will trigger a `PSHSuccessfulAppRegistrationBusEvent` bus event (see `PSHBusProvider`).
  *
- *  @param appId     Push Technologies application ID.
- *  @param appSecret Push Technologies application secret.
+ *  @param appId     PUSHTech application ID.
+ *  @param appSecret PUSHTech application secret.
  *  @param logLevel  Level of logging detail (see `PSHLogLevel`).
  */
 + (void)initializeWithAppId:(NSString*)appId
@@ -198,7 +198,7 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
 /// @name SDK State
 
 /**
- *  Returns `YES` when the app has been previously registered, that is when local model has been updated with the necessary info from Push Technologies platform in order to perform any operation.
+ *  Returns `YES` when the app has been previously registered, that is when local model has been updated with the necessary info from PUSHTech platform in order to perform any operation.
  */
 @property (nonatomic, readonly) BOOL isAppRegistered;
 
@@ -209,7 +209,7 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
 @property (nonatomic, readonly) NSString *appSecret;
 
 /**
- *  Registers user's device push token, in order to be able to send him notifications from Push Technologies platform.
+ *  Registers user's device push token, in order to be able to send him notifications from PUSHTech platform.
  *
  *  @param pushToken Data from application delegates's method `application:didRegisterForRemoteNotificationsWithDeviceToken:`
  */
@@ -223,6 +223,26 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
  */
 + (void)registerApplication:(UIApplication *)application
        forNotificationTypes:(PSHNotificationType)notifications;
+
+/**
+ *  Use this method to register custom actions for interactive notifications.
+ *
+ *  @param categoryID           Identifier for the new category of actions.
+ *  @param notificationActions  Array of actions, UIMutableUserNotificationAction objects.
+ */
+- (BOOL)registerNotificationInteraction:(NSString *)categoryID
+                                actions:(NSArray<UIMutableUserNotificationAction *>*)notificationActions;
+
+/**
+ *  Use this method to register custom actions for interactive notifications. Actions are by default non destructive and authentication required.
+ *
+ *  @param categoryID           Identifier for the new category of actions.
+ *  @param buttonLabels         Array of button labels.
+ *  @param buttonIdentifiers    Array of action identifiers.
+ */
+- (BOOL)registerNotificationInteraction:(NSString *)categoryID
+                                 labels:(NSArray<NSString *>*)buttonLabels
+                            identifiers:(NSArray<NSString *>*)buttonIdentifiers;
 
 /**
  *  Removes any data from the model.
@@ -278,7 +298,7 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
                                fail:(PSHHandleRemotePushFailAsyncBlock)failBlock;
 
 /**
- *  Mark the campaign as viewed (updating the model and informing Push Technologies SDK platform).
+ *  Mark the campaign as viewed (updating the model and informing PUSHTech SDK platform).
  *
  *  @param campaign The viewed campaign.
  */

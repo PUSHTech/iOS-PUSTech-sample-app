@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- This class is only a helper which uses `NSNotificationCenter` and the Objective-C runtime under the hoods offering a simpler approach than the `NSNotificationCenter` standard flow verbosity. It adds the following abstraction layer: there is an event bus for the Push Technologies SDK and any class can register itself as an event bus listener just implementing *special* methods. Let's see this with an example:
+ This class is only a helper which uses `NSNotificationCenter` and the Objective-C runtime under the hoods offering a simpler approach than the `NSNotificationCenter` standard flow verbosity. It adds the following abstraction layer: there is an event bus for the PUSHTech SDK and any class can register itself as an event bus listener just implementing *special* methods. Let's see this with an example:
  
     -(void)onSuccessfulAppRegistrationBusEvent:(NSNotification*)notification
  

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Data Access Object for a Push Technologies Manager campaign. Property names are self explanatory.
+ *  Data Access Object for a PUSHTech Manager campaign. Property names are self explanatory.
  */
 @interface PSHCampaignDAO : NSObject
 

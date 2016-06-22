@@ -13,7 +13,8 @@
  *  open a landing page is received but the app is in the background, this method will be called in
  *  background and again in foreground when the landing page should be actually shown.
  *
- *  @param completionHandler Execute this callback when you are finished performing the background
+ *  @param notification         Received notification.
+ *  @param completionHandler    Execute this callback when you are finished performing the background
  *  operations. It's important to execute this callback once you have finished all your operations,
  *  since this tells the system to terminate your application. If you don't execute the callback,
  *  the system will assume your application is not working and the system could decide that no more 
@@ -23,5 +24,14 @@
  */
 - (BOOL)shouldPerformDefaultActionForRemoteNotification:(PSHNotification *)notification
         completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
+@optional
+/**
+ *  This method is called when a notification interaction is received.
+ *
+ *  @param actionID     Action identifier.
+ *  @param notification Notification the action belongs to.
+ */
+- (void)performInteraction:(NSString *)actionID onNotification:(PSHNotification *)notification;
 
 @end
