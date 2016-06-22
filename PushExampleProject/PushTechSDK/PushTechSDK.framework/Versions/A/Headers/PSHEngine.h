@@ -239,6 +239,14 @@ typedef NS_OPTIONS(NSInteger, PSHLocationStateType){
 
 /**
  
+ Delete a campaign from the local database.
+ 
+ @param campaignDAO     Campaign to be deleted.
+ */
+-(void)deleteCampaign:(PSHCampaignDAO *)campaignDAO;
+
+/**
+ 
  This should be called whenever a remote notification is received in order to know if it contains any **new campaign** information and update the model: in `application:didFinishLaunchingWithOptions:` (asking `launchOptions` for `UIApplicationLaunchOptionsRemoteNotificationKey` key) and `application:didReceiveRemoteNotification:` (both `UIApplicationDelegate` methods).
  
  

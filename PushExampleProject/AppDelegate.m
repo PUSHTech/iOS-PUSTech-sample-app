@@ -1,6 +1,5 @@
 
 #import <PushTechSDK/PushTechSDK.h>
-
 #import "AppDelegate.h"
 #import "NotificationDelegate.h"
 #import "EventBusDelegate.h"
@@ -12,6 +11,7 @@
 
 @end
 
+
 @implementation AppDelegate
 
 
@@ -19,14 +19,29 @@
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupPushTechSDK];
+    
+    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification) {
+        // App open from remote Push notification
+    }else{
+        // Did not open from remote Push notification
+    }
+    
     return YES;
 }
+
+- (void)setBadgeTabBar
+{
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
+}
+
 
 - (void)setupPushTechSDK
 {
     [self setupLandingPageTheme];
     [PSHEngine startWithEventBusDelegate:self.eventBusDelegate = [EventBusDelegate new]
-                    notificationDelegate:self.notificationDelegate = [NotificationDelegate new]];
+                    notificationDelegate:self.notificationDelegate = [NotificationDelegate new]];     
 }
 
 - (void)setupLandingPageTheme
@@ -37,19 +52,24 @@
     [PSHLandingPage setDelegate:self];
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+
+}
+
 - (void)willShowLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willshow landing page");
+    NSLog(@"will show landing page");
 }
 
 - (void)willDismissLandingPageWithURLString:(NSString *)URLString
 {
-    NSLog(@"willdismiss landing page");
+    NSLog(@"will dismiss landing page");
 }
 - (BOOL)shouldNavigateToPageWithURLRequest:(NSURLRequest *)request
 {
     NSLog(@"will navigate");
     return YES;
 }
+
 
 @end

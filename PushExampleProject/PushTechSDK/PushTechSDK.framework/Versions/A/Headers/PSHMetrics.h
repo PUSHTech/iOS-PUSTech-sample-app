@@ -1,6 +1,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PSHProduct.h"
 
 @class PSHCampaignDAO;
 
@@ -103,15 +104,9 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
 /**
  *  Use this method to send a product purchase metric.
  *
- *  @param name         Name of product
- *  @param productId    ID of product
- *  @param price        Price of product
- *  @param currency     Currency in ISO 4217 codification
+ *  @param productArray Array of PSHProduct objects
  */
-+ (void)sendMetricPurchaseProduct:(NSString *)name
-                        productId:(NSString *)productId
-                            price:(NSNumber *)price
-                         currency:(NSString *)currency;
++ (void)sendMetricPurchaseProducts:(NSArray<PSHProduct *> *)productArray;
 
 /**
  *  Use this method to send a twitter followers metric.
@@ -169,7 +164,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *
  *  @param facebookId   Facebook ID.
  */
-+ (void)sendMetricFacbookID:(NSString *)facebookId;
++ (void)sendMetricFacebookID:(NSString *)facebookId;
 
 /**
  *  Use this method to send a twitter ID metric.
@@ -315,17 +310,11 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
 /**
  *  Use this method to send a product purchase metric.
  *
- *  @param name         Name of product
- *  @param productId    ID of product
- *  @param price        Price of product
- *  @param currency     Currency in ISO 4217 codification
+ *  @param productArray Array of PSHProduct objects
  *  @param state        Send only when value changed. Default is NO.
  */
-+ (void)sendMetricPurchaseProduct:(NSString *)name
-                        productId:(NSString *)productId
-                            price:(NSNumber *)price
-                         currency:(NSString *)currency
-                         onChange:(BOOL)state;
++ (void)sendMetricPurchaseProducts:(NSArray<PSHProduct *> *)productArray
+                          onChange:(BOOL)state;
 
 /**
  *  Use this method to send a twitter followers metric.
@@ -357,7 +346,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *  @param facebookId   Facebook ID.
  *  @param state        Send only when value changed. Default is NO.
  */
-+ (void)sendMetricFacbookID:(NSString *)facebookId onChange:(BOOL)state;
++ (void)sendMetricFacebookID:(NSString *)facebookId onChange:(BOOL)state;
 
 /**
  *  Use this method to send a twitter ID metric.
