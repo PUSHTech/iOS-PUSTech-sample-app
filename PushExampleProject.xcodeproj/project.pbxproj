@@ -21,8 +21,9 @@
 		80505B351D05F336004ECF12 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B341D05F336004ECF12 /* HomeViewController.m */; };
 		80505B381D05FF32004ECF12 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B371D05FF32004ECF12 /* MessageViewController.m */; };
 		80505B3B1D061194004ECF12 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80505B3A1D061194004ECF12 /* WebViewController.m */; };
-		80F8963E1D0F548B00420F16 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F8963C1D0F548B00420F16 /* PushTechSDK.framework */; };
-		80F8963F1D0F548B00420F16 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80F8963D1D0F548B00420F16 /* PushTechSDKResources.bundle */; };
+		80AEC5DF1D15FBE700E6E009 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AEC5DE1D15FBE700E6E009 /* SettingsViewController.m */; };
+		80BD47681D19761700D99647 /* PushTechSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BD47661D19761700D99647 /* PushTechSDK.framework */; };
+		80BD47691D19761700D99647 /* PushTechSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80BD47671D19761700D99647 /* PushTechSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,10 @@
 		80505B371D05FF32004ECF12 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		80505B391D061194004ECF12 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		80505B3A1D061194004ECF12 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		80F8963C1D0F548B00420F16 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
-		80F8963D1D0F548B00420F16 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
+		80AEC5DD1D15FBE700E6E009 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		80AEC5DE1D15FBE700E6E009 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		80BD47661D19761700D99647 /* PushTechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushTechSDK.framework; sourceTree = "<group>"; };
+		80BD47671D19761700D99647 /* PushTechSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PushTechSDKResources.bundle; sourceTree = "<group>"; };
 		9C696B5D9B74379565F152A0 /* libPods-PushExampleProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushExampleProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0E48EF015780EEE5051E5 /* Pods-PushExampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F71A30805A6C15D2AE244543 /* Pods-PushExampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushExampleProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushExampleProject/Pods-PushExampleProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9D32A61B945165006EEFE1 /* CoreLocation.framework in Frameworks */,
-				80F8963E1D0F548B00420F16 /* PushTechSDK.framework in Frameworks */,
+				80BD47681D19761700D99647 /* PushTechSDK.framework in Frameworks */,
 				1FAF20642668B0B6D9E55702 /* libPods-PushExampleProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,8 @@
 				80505B371D05FF32004ECF12 /* MessageViewController.m */,
 				80505B391D061194004ECF12 /* WebViewController.h */,
 				80505B3A1D061194004ECF12 /* WebViewController.m */,
+				80AEC5DD1D15FBE700E6E009 /* SettingsViewController.h */,
+				80AEC5DE1D15FBE700E6E009 /* SettingsViewController.m */,
 				2B74253D1B145900002B58EE /* Main.storyboard */,
 				2B7425401B145900002B58EE /* Images.xcassets */,
 				2B7425421B145900002B58EE /* LaunchScreen.xib */,
@@ -184,8 +189,8 @@
 		2BECCAC81B145C1200AD2D28 /* PushTechSDK */ = {
 			isa = PBXGroup;
 			children = (
-				80F8963C1D0F548B00420F16 /* PushTechSDK.framework */,
-				80F8963D1D0F548B00420F16 /* PushTechSDKResources.bundle */,
+				80BD47661D19761700D99647 /* PushTechSDK.framework */,
+				80BD47671D19761700D99647 /* PushTechSDKResources.bundle */,
 				2B7142B91B7DF9B20049DB10 /* Configuration */,
 			);
 			path = PushTechSDK;
@@ -301,7 +306,7 @@
 				2B74253F1B145900002B58EE /* Main.storyboard in Resources */,
 				2B7142BB1B7DF9CF0049DB10 /* PSHConfiguration.plist in Resources */,
 				2B7425441B145900002B58EE /* LaunchScreen.xib in Resources */,
-				80F8963F1D0F548B00420F16 /* PushTechSDKResources.bundle in Resources */,
+				80BD47691D19761700D99647 /* PushTechSDKResources.bundle in Resources */,
 				2B7425411B145900002B58EE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +376,7 @@
 				2B3E12761B7DDA1100E0BCEC /* NotificationDelegate.m in Sources */,
 				2B7425391B145900002B58EE /* AppDelegate.m in Sources */,
 				80505B3B1D061194004ECF12 /* WebViewController.m in Sources */,
+				80AEC5DF1D15FBE700E6E009 /* SettingsViewController.m in Sources */,
 				2B3E12791B7DDA2700E0BCEC /* EventBusDelegate.m in Sources */,
 				80505B351D05F336004ECF12 /* HomeViewController.m in Sources */,
 				80505B381D05FF32004ECF12 /* MessageViewController.m in Sources */,

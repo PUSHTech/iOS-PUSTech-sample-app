@@ -66,6 +66,16 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
 + (void)sendMetricCountry:(NSString *)country;
 
 /**
+ *  Use this method to Unsubscribe to Push Notification.
+ */
++ (void)sendMetricUnsubscribe;
+
+/**
+ *  Use this method to Subscribe to Push Notification.
+ */
++ (void)sendMetricSubscribe;
+
+/**
  *  Use this method to send a facebook friends metric.
  *
  *  @param number   Number of facebook friends.
@@ -164,7 +174,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *
  *  @param facebookId   Facebook ID.
  */
-+ (void)sendMetricFacebookID:(NSString *)facebookId;
++ (void)sendMetricFacbookID:(NSString *)facebookId;
 
 /**
  *  Use this method to send a twitter ID metric.
@@ -346,7 +356,7 @@ typedef NS_ENUM(NSUInteger, PSHGenderType){
  *  @param facebookId   Facebook ID.
  *  @param state        Send only when value changed. Default is NO.
  */
-+ (void)sendMetricFacebookID:(NSString *)facebookId onChange:(BOOL)state;
++ (void)sendMetricFacbookID:(NSString *)facebookId onChange:(BOOL)state;
 
 /**
  *  Use this method to send a twitter ID metric.

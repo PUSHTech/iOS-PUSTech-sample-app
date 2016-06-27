@@ -22,7 +22,7 @@
 - (void)onSuccessfulDeviceIdBusEvent:(NSNotification *)notification
 {
     NSString *deviceId = [PSHEngine sharedInstance].deviceId;
-    // Need a DeviceID to be able to send notifications using the PUSH Techoloigies server API.
+    // Need a DeviceID to be able to send notifications using the PUSHTech™ server API.
     // The app will normally send the DeviceID to a backend server that later will use it to send
     // requests to the PUSH Tecnologies server.
     NSLog(@"Received DeviceID = %@.", deviceId);
