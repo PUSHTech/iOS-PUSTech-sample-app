@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>baseURL</key>
-	<string>https://pre.push.software/</string>
 	<key>notificationTypes</key>
 	<dict>
 		<key>alert</key>
@@ -14,8 +12,8 @@
 		<true/>
 	</dict>
 	<key>applicationSecret</key>
-	<string>ce38874bf43f79469b68d78892d840c3</string>
+	<string>Your-PUSHTech-APP-Secret</string>
 	<key>applicationID</key>
-	<string>56bc7f19f92ea111d5000001</string>
+	<string>Your-PUSHTech-APP-ID</string>
 </dict>
 </plist>
