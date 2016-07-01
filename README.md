@@ -28,7 +28,7 @@ You can implement easily your custom interaction within your app as landing page
 
 ## Message center and Notification subscription management
 
-List all yours campaign easily with your custom design.
+List all yours campaign easily within your custom design.
 
 ![alt tag](https://github.com/PUSHTech/iOS-sample-app/raw/develop/screens/git-preview1.jpg)
 
